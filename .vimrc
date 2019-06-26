@@ -42,18 +42,17 @@ set undodir=~/.vimundo/
 set nowritebackup
 set textwidth=0
 
-set tabstop=2       " The width of a TAB is set to 4.
+set tabstop=4       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
                     " Vim will interpret it to be having
                     " a width of 4.
 
-set shiftwidth=2    " Indents will have a width of 4
+set shiftwidth=4    " Indents will have a width of 4
 
-set softtabstop=2   " Sets the number of columns for a TAB
+set softtabstop=4   " Sets the number of columns for a TAB
 
 set expandtab       " Expand TABs to spaces
 
-set tabstop=2
 set bs=2		" allow backspacing over everything in insert mode
 set ai			" always set autoindenting on
 set viminfo='20,\"50	" read/write a .viminfo file, don't store more
@@ -84,14 +83,15 @@ nmap <C-l> 20zl
 nmap <C-h> 20zh
 nmap <C-j> <C-d>
 nmap <C-k> <C-u>
-nmap <leader>/ :set relativenumber! number!<CR>
+nmap <leader>/ :set relativenumber! nonumber<CR>
+nmap <leader>. :set number! norelativenumber<CR>
+nmap <leader>' :GitGutterToggle<CR>
 nmap <leader>m :NERDTreeToggle<cr>:NERDTreeMirror<cr>
 nmap <leader>f :Prettier<CR>
 " nmap <leader>. :NERDTreeMirror<cr>
 " let NERDTreeQuitOnOpen=1
 
 nmap <leader>j :tabnew 
-nmap <leader>. :NERDTreeClose<CR>:tabclose<CR>
 nmap <leader>n :NERDTreeClose<CR>:tabnext<CR>
 nmap <leader>p :NERDTreeClose<CR>:tabprevious<CR>
 nmap <leader>1 :NERDTreeClose<CR>:tabn 1<CR>
@@ -131,11 +131,6 @@ colorscheme monokai-leo
 
 " configure sign column
 let g:gitgutter_override_sign_column_highlight = 0
-if exists('&signcolumn')  " Vim 7.4.2201
-  set signcolumn=yes
-else
-  let g:gitgutter_sign_column_always = 1
-endif
 highlight SignColumn ctermbg=black
 highlight GitGutterAdd    ctermfg=2
 highlight GitGutterChange ctermfg=3
