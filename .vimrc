@@ -87,6 +87,8 @@ nmap <leader>/ :set relativenumber! nonumber<CR>
 nmap <leader>. :set number! norelativenumber<CR>
 nmap <leader>' :GitGutterToggle<CR>
 nmap <leader>m :NERDTreeToggle<cr>:NERDTreeMirror<cr>
+nmap <leader>b :b#<CR>
+nmap <leader>c :Glog!<CR>y:cope<CR>
 
 nmap <leader>j :tabnew 
 nmap <leader>n :NERDTreeClose<CR>:tabnext<CR>
