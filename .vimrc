@@ -72,6 +72,7 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn|node_modules)$',
     \ 'file': '\v\.(exe|so|dll|jpg|png)$',
     \ }
+set switchbuf+=usetab,newtab
 
 
 
@@ -89,7 +90,8 @@ nmap <leader>. :set number! norelativenumber<CR>
 nmap <leader>' :GitGutterToggle<CR>
 nmap <leader>m :NERDTreeToggle<cr>:NERDTreeMirror<cr>
 nmap <leader>b :b#<CR>
-nmap <leader>c :Glog!<CR>y:tab cope<CR>
+nmap <leader>c :Glog!<CR>y:cope<CR>
+nmap <leader>g :G<CR>
 
 nmap <leader>j :tabnew 
 nmap <leader>n :NERDTreeClose<CR>:tabnext<CR>
