@@ -4,5 +4,5 @@
 git pull origin master
 
 # install files
-. drivers/install_files.sh
+. drivers/update_files.sh
 
