@@ -1,4 +1,6 @@
+# get the latest files
 git pull origin master
-cp .tmux.conf ~/
-cp .vimrc ~/
+
+# install files
+. drivers/install_files.sh
 
