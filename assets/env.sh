@@ -1,3 +1,7 @@
+# DEFINE ENV START
+# installing script moves codes between START and END into ~/.bashrc
+# uninstalling script removes all codes between START and END in ~/.bashrc
+
 # VARIABLES
 linux1='b03902130@linux1.csie.ntu.edu.tw'
 linux2='b03902130@linux2.csie.ntu.edu.tw'
@@ -10,3 +14,4 @@ mint='192.168.56.101'
 # ALIAS
 alias home='ssh -t $linux5 "ssh leo@localhost -p 1994"'
 
+# DEFINE ENV END
