@@ -85,14 +85,13 @@ nmap <C-l> 20zl
 nmap <C-h> 20zh
 nmap <C-j> <C-d>
 nmap <C-k> <C-u>
-nmap <leader>/ :set relativenumber! nonumber<CR>
-nmap <leader>. :set number! norelativenumber<CR>
+nmap <leader>/ :set relativenumber!<CR>
 nmap <leader>' :GitGutterToggle<CR>
 nmap <leader>m :NERDTreeToggle<cr>:NERDTreeMirror<cr>
 nmap <leader>b :b#<CR>
 nmap <leader>c :Glog!<CR>y:cope<CR>
 nmap <leader>g :G<CR>
-nmap <leader>q :q<CR>
+nmap <leader>. :q<CR>
 
 nmap <leader>j :tabnew 
 nmap <leader>n :NERDTreeClose<CR>:tabnext<CR>
