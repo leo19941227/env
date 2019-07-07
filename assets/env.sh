@@ -16,5 +16,6 @@ github='https://github.com/b03902130/'
 alias home='ssh -t $linux5 "ssh leo@localhost -p 1994"'
 alias mint='ssh $mint'
 alias speech='ssh $speech'
+alias lab_nfs='sshfs -p 3122 $speech:/homes/leo1994122701'
 
 # DEFINE ENV END
