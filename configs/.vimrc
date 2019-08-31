@@ -122,14 +122,14 @@ nmap <leader>q0 :wa<CR>:0tabclose<CR>
 " COLOR SETTINGS
 
 " TRICKY SETTING TO LET VIM COLOR WORK CORRECTLY IN TMUX 
-" set background=dark
-colorscheme monokai-leo
+set background=dark
+" colorscheme monokai-leo
 
-" highlight clear CursorLine
-" highlight CursorLine ctermbg=235
-" highlight CursorLineNR ctermfg=yellow
-" highlight LineNr ctermfg=240
-" highlight Comment ctermfg=240
+highlight clear CursorLine
+highlight CursorLine ctermbg=235
+highlight CursorLineNR ctermfg=yellow
+highlight LineNr ctermfg=240
+highlight Comment ctermfg=240
 
 " configure sign column
 let g:gitgutter_override_sign_column_highlight = 0

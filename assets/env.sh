@@ -9,6 +9,7 @@ linux3='b03902130@linux3.csie.ntu.edu.tw'
 linux4='b03902130@linux4.csie.ntu.edu.tw'
 linux5='b03902130@linux5.csie.ntu.edu.tw'
 speech='leo1994122701@sppco.ee.ntu.edu.tw'
+lab='leo@140.112.21.12'
 mint='leo@192.168.56.101'
 github='https://github.com/b03902130/'
 
@@ -16,6 +17,7 @@ github='https://github.com/b03902130/'
 alias home='ssh -t $linux5 "ssh leo@localhost -p 1994"'
 alias mint='ssh $mint'
 alias speech='ssh $speech'
-alias lab_nfs='sshfs -p 3122 $speech:/homes/leo1994122701'
+alias lab='ssh $lab'
+alias nfs='sshfs -p 3122 $speech:/homes/leo1994122701'
 
 # DEFINE ENV END
