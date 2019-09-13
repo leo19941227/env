@@ -13,6 +13,7 @@ alias speech='ssh $speech'
 alias lab='ssh $lab'
 
 # VENVS
-ls ~/venvs | while read venv; do
-    alias $venv='. ~/venvs/'$venv'/bin/activate'
+for venv in $(ls ~/venvs); do
+    alias $venv='source ~/venvs/'$venv'/bin/activate'
 done
+

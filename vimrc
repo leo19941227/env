@@ -67,6 +67,7 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(exe|so|dll|jpg|png)$',
     \ }
 set switchbuf+=usetab,newtab
+set pastetoggle=<F2>
 
 
 
