@@ -8,19 +8,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mkitt/tabline.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-commentary'
-Plugin 'suy/vim-context-commentstring'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'alvan/vim-closetag'
-Plugin 'valloric/matchtagalways'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'prettier/vim-prettier'
-Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -33,6 +24,7 @@ syntax on
 set ff=unix
 set nowrap
 set relativenumber
+set number
 set cursorline
 set nocompatible
 set wildmenu
@@ -43,16 +35,18 @@ set undodir=~/.vimundo/
 set nowritebackup
 set textwidth=0
 
-set tabstop=4       " The width of a TAB is set to 4.
-                    " Still it is a \t. It is just that
-                    " Vim will interpret it to be having
-                    " a width of 4.
+set list
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 
+set tabstop=4
 set shiftwidth=4    " Indents will have a width of 4
-
 set softtabstop=4   " Sets the number of columns for a TAB
-
 set expandtab       " Expand TABs to spaces
+
+augroup my_python_settings
+    autocmd!
+    autocmd FileType python setlocal ts=4 sw=4 sts=4 noet
+augroup END
 
 set bs=2		" allow backspacing over everything in insert mode
 set ai			" always set autoindenting on
@@ -123,7 +117,6 @@ nmap <leader>q0 :wa<CR>:0tabclose<CR>
 
 " TRICKY SETTING TO LET VIM COLOR WORK CORRECTLY IN TMUX 
 set background=dark
-" colorscheme monokai-leo
 
 highlight clear CursorLine
 highlight CursorLine ctermbg=235
