@@ -43,13 +43,13 @@ set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
-augroup my_python_settings
+augroup python_settings
     autocmd!
-    autocmd FileType python setlocal ts=4 sw=4 sts=4 noet
+    autocmd FileType python setlocal et ts=4 sw=4 sts=4
 augroup END
 
-set bs=2		" allow backspacing over everything in insert mode
-set ai			" always set autoindenting on
+set bs=2        " allow backspacing over everything in insert mode
+set ai          " always set autoindenting on
 set viminfo='20,\"50	" read/write a .viminfo file, don't store more
 set showmatch
 set splitright
@@ -57,9 +57,9 @@ set updatetime=100
 
 " hide the status bar from original vim, cause alareay 
 " use another plugin for status bar
-set noshowmode
-set laststatus=0
-set noshowcmd
+" set noshowmode
+" set laststatus=0
+" set noshowcmd
 
 set wildignore+=*/node_modules/*,*.so,*.swp,*.zip,*.jpg,*.png
 let g:ctrlp_custom_ignore = {
@@ -81,16 +81,16 @@ nmap <C-h> 20zh
 nmap <C-j> <C-d>
 nmap <C-k> <C-u>
 nmap <leader>/ :set relativenumber!<CR>
+nmap <leader>n :set number!<CR>
 nmap <leader>' :GitGutterToggle<CR>
 nmap <leader>m :NERDTreeToggle<cr>:NERDTreeMirror<cr>
 nmap <leader>b :b#<CR>
 nmap <leader>c :Glog!<CR>y:cope<CR>
 nmap <leader>g :G<CR>
 nmap <leader>. :q<CR>
+nmap <leader>t :set expandtab!<CR>
 
 nmap <leader>j :tabnew 
-nmap <leader>n :NERDTreeClose<CR>:tabnext<CR>
-nmap <leader>p :NERDTreeClose<CR>:tabprevious<CR>
 nmap <leader>1 :NERDTreeClose<CR>:tabn 1<CR>
 nmap <leader>2 :NERDTreeClose<CR>:tabn 2<CR>
 nmap <leader>3 :NERDTreeClose<CR>:tabn 3<CR>
