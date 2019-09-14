@@ -11,6 +11,7 @@ github='https://github.com/b03902130/'
 # ALIAS
 alias speech='ssh $speech'
 alias lab='ssh $lab'
+alias nlog='bash ~/env/vim_newest_log.sh'
 
 # VENVS
 for venv in $(ls ~/venvs); do
