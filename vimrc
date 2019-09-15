@@ -62,7 +62,7 @@ set updatetime=100
 " set laststatus=0
 " set noshowcmd
 
-set wildignore+=*/node_modules/*,*.so,*.swp,*.zip,*.jpg,*.png
+set wildignore+=*/node_modules/*,*.so,*.swp,*.zip,*.jpg,*.png,*/data/*,*/__pycache__/*
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn|node_modules)$',
     \ 'file': '\v\.(exe|so|dll|jpg|png)$',
