@@ -34,6 +34,7 @@ set undofile
 set undodir=~/.vimundo/
 set nowritebackup
 set textwidth=0
+set ignorecase
 
 set list
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
