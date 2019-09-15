@@ -15,7 +15,7 @@ alias nlog='bash ~/env/vim_newest_log.sh'
 alias 'gitlog'='git log --oneline --all --graph'
 
 # VENVS
-for venv in $(ls ~/venvs); do
+[ -d ~/venvs/ ] && for venv in $(ls ~/venvs); do
     alias $venv='source ~/venvs/'$venv'/bin/activate'
 done
 
