@@ -12,6 +12,7 @@ Plugin 'mkitt/tabline.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-airline/vim-airline'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -69,6 +70,7 @@ let g:ctrlp_custom_ignore = {
     \ }
 set switchbuf+=usetab,newtab
 set pastetoggle=<F2>
+let g:airline#extensions#tabline#enabled = 0
 
 
 
