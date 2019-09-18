@@ -59,9 +59,9 @@ set updatetime=100
 
 " hide the status bar from original vim, cause alareay 
 " use another plugin for status bar
-" set noshowmode
-" set laststatus=0
-" set noshowcmd
+set noshowmode
+set laststatus=0
+set noshowcmd
 
 set wildignore+=*/node_modules/*,*.so,*.swp,*.zip,*.jpg,*.png,*/data/*,*/__pycache__/*
 let g:ctrlp_custom_ignore = {
