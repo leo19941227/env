@@ -85,7 +85,7 @@ nmap <C-j> <C-d>
 nmap <C-k> <C-u>
 nmap <leader>/ :set relativenumber!<CR>
 nmap <leader>n :set number!<CR>
-nmap <leader>' :GitGutterToggle<CR>
+nmap <leader>' :GitGutterToggle<CR>:GitGutterAll<CR>
 nmap <leader>m :NERDTreeToggle<cr>:NERDTreeMirror<cr>
 nmap <leader>b :b#<CR>
 nmap <leader>cb :Glog!<CR>
