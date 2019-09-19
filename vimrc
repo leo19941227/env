@@ -88,7 +88,9 @@ nmap <leader>n :set number!<CR>
 nmap <leader>' :GitGutterToggle<CR>
 nmap <leader>m :NERDTreeToggle<cr>:NERDTreeMirror<cr>
 nmap <leader>b :b#<CR>
-nmap <leader>c :Glog!<CR>y:cope<CR>
+nmap <leader>cb :Glog!<CR>
+nmap <leader>ca :Glog! --all<CR>
+nmap <leader>cs :Glog! %<CR>
 nmap <leader>g :G<CR>
 nmap <leader>. :q<CR>
 nmap <leader>t :set expandtab!<CR>
