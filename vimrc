@@ -173,3 +173,7 @@ nnoremap to :tabonly<CR>
 nnoremap <expr> tt (v:count == 0 ? ":tabnew " : ":<C-U>execute v:count 'tabnext'<CR>")
 nnoremap <expr> tq (v:count == 0 ? ":tabclose<CR>" : ":<C-U>execute v:count 'tabclose'<CR>")
 
+
+" IGNORE BATTLESHIP PREINSTALLED PACKAGEDS
+set runtimepath-=/usr/share/vim/vimfiles
+
