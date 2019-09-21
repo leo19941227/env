@@ -38,6 +38,7 @@ set viminfo='20,\"50    " read/write a .viminfo file, don't store more
 " set nowrap
 set wrap
 set breakindent
+set linebreak
 set showbreak=\ 
 
 set relativenumber
@@ -107,11 +108,9 @@ set pastetoggle=<F2>
 
 
 " PLUGIN SETTINGS
-let g:airline#extensions#tabline#enabled = 0  " otherwise will conflict with another plugin: tabline
-let g:gitgutter_override_sign_column_highlight = 0
 let g:indentLine_char = '┊'
 set updatetime=100  " for gitgutter, or else default refresh time is 4 secs
-set laststatus=2
+set laststatus=2  " for ligitline to correctly render the status bar
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
@@ -124,19 +123,22 @@ let mapleader = ","
 map <C-c> <ESC>
 
 " source .vimrc
-nmap <leader>rr :source ~/.vimrc<CR>
+nmap <leader>R :source ~/.vimrc<CR>
 
 " turn off search highlight for now, and turn back when searching again
-nmap <leader>hh :nohlsearch<CR>
+nmap <leader>H :nohlsearch<CR>
 
 " toggle between space/tab when inserting <tab>
-nmap <leader>ee :set expandtab!<CR>
+nmap <leader>E :set expandtab!<CR>
 
 " moving around file, up/down/left/right halfpage
-nmap <C-l> 20zl
-nmap <C-h> 20zh
 nmap <C-j> <C-d>
 nmap <C-k> <C-u>
+nmap <expr> j v:count == 0 ? 'gj' : "\<Esc>".v:count.'j'
+nmap <expr> k v:count == 0 ? 'gk' : "\<Esc>".v:count.'k'
+" horizontal page moving
+" nmap <C-l> 20zl
+" nmap <C-h> 20zh
 
 " for quick jump (press [number] + [k/j] to relatively jump up/down several lines
 " for debugging (need to see the absolute line number)
@@ -165,9 +167,9 @@ nmap <leader>/ :q<CR>
 
 " FOR TAB
 " create and move between tabs
-nnoremap tp :tabprev<CR>
-nnoremap tn :tabnext<CR>
-nnoremap to :tabonly<CR>
-nnoremap <expr> tt (v:count == 0 ? ":tabnew " : ":<C-U>execute v:count 'tabnext'<CR>")
-nnoremap <expr> tq (v:count == 0 ? ":tabclose<CR>" : ":<C-U>execute v:count 'tabclose'<CR>")
+nmap tp :tabprev<CR>
+nmap tn :tabnext<CR>
+nmap to :tabonly<CR>
+nmap <expr> tt (v:count == 0 ? ":tabnew " : ":<C-U>execute v:count 'tabnext'<CR>")
+nmap <expr> tq (v:count == 0 ? ":tabclose<CR>" : ":<C-U>execute v:count 'tabclose'<CR>")
 
