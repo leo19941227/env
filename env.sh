@@ -1,3 +1,5 @@
+#!/bin/bash
+
 EDITOR=vim
 
 # VARIABLES
@@ -15,7 +17,7 @@ alias lab='ssh $lab'
 alias nlog='bash ~/env/open_newest_log.sh'
 alias 'gitlog'='git log --oneline --all --graph'
 
-# ACTIVATE VENVS
+# ACTIVATE VENVS OF VIRTUALENV
 [ -d ~/venvs/ ] && for venv in $(ls ~/venvs); do
     alias $venv='source ~/venvs/'$venv'/bin/activate'
 done
