@@ -40,7 +40,7 @@ The power of vim comes from the comprehensive support of package community. I us
 
 ```bash
 ~$ bash env/vundle.sh
-~$ ln -s env/vimrc .vimrc
+~$ ln -s env/vimrc $HOME/.vimrc
 ~$ vim
 ```
 
@@ -58,7 +58,7 @@ I use `tpm` as my **tmux package manager**. So we also need to first install `tp
 
 ```bash
 ~$ bash env/tpm.sh
-~$ ln -s env/tmux.conf .tmux.conf
+~$ ln -s env/tmux.conf $HOME/.tmux.conf
 ~$ tmux
 ```
 
