@@ -123,27 +123,27 @@ let mapleader = ","
 map <C-c> <ESC>
 
 " source .vimrc
-nmap <leader>R :source ~/.vimrc<CR>
+nnoremap <leader>R :source ~/.vimrc<CR>
 
 " turn off search highlight for now, and turn back when searching again
-nmap <leader>H :nohlsearch<CR>
+nnoremap <leader>H :nohlsearch<CR>
 
 " toggle between space/tab when inserting <tab>
-nmap <leader>E :set expandtab!<CR>
+nnoremap <leader>E :set expandtab!<CR>
 
 " moving around file, up/down/left/right halfpage
-nmap <C-j> <C-d>
-nmap <C-k> <C-u>
-nmap <expr> j v:count == 0 ? 'gj' : "\<Esc>".v:count.'j'
-nmap <expr> k v:count == 0 ? 'gk' : "\<Esc>".v:count.'k'
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>
+nnoremap <expr> j v:count == 0 ? 'gj' : "\<Esc>".v:count.'j'
+nnoremap <expr> k v:count == 0 ? 'gk' : "\<Esc>".v:count.'k'
 " horizontal page moving
-" nmap <C-l> 20zl
-" nmap <C-h> 20zh
+" nnoremap <C-l> 20zl
+" nnoremap <C-h> 20zh
 
 " for quick jump (press [number] + [k/j] to relatively jump up/down several lines
 " for debugging (need to see the absolute line number)
-nmap <leader>n :set relativenumber!<CR>
-nmap <leader>j :set number!<CR>
+nnoremap <leader>n :set relativenumber!<CR>
+nnoremap <leader>j :set number!<CR>
 
 " map the <Space> key to toggle a selected fold opened/closed.
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
@@ -154,22 +154,22 @@ vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 
 
 " FOR PLUGIN
-nmap <leader>' :GitGutterToggle<CR>:GitGutterAll<CR>
-nmap <leader>m :NERDTreeToggle<cr>:NERDTreeMirror<cr>
-nmap <leader>b :b#<CR>
-nmap <leader>cb :Glog!<CR>
-nmap <leader>ca :Glog! --all<CR>
-nmap <leader>cs :Glog! %<CR>
-nmap <leader>g :G<CR>
-nmap <leader>. :w<CR>
-nmap <leader>/ :q<CR>
+nnoremap <leader>' :GitGutterToggle<CR>:GitGutterAll<CR>
+nnoremap <leader>m :NERDTreeToggle<cr>:NERDTreeMirror<cr>
+nnoremap <leader>b :b#<CR>
+nnoremap <leader>cb :Glog!<CR>
+nnoremap <leader>ca :Glog! --all<CR>
+nnoremap <leader>cs :Glog! %<CR>
+nnoremap <leader>g :G<CR>
+nnoremap <leader>. :w<CR>
+nnoremap <leader>/ :q<CR>
 
 
 " FOR TAB
 " create and move between tabs
-nmap tp :tabprev<CR>
-nmap tn :tabnext<CR>
-nmap to :tabonly<CR>
-nmap <expr> tt (v:count == 0 ? ":tabnew " : ":<C-U>execute v:count 'tabnext'<CR>")
-nmap <expr> tq (v:count == 0 ? ":tabclose<CR>" : ":<C-U>execute v:count 'tabclose'<CR>")
+nnoremap tp :tabprev<CR>
+nnoremap tn :tabnext<CR>
+nnoremap to :tabonly<CR>
+nnoremap <expr> tt (v:count == 0 ? ":tabnew " : ":<C-U>execute v:count 'tabnext'<CR>")
+nnoremap <expr> tq (v:count == 0 ? ":tabclose<CR>" : ":<C-U>execute v:count 'tabclose'<CR>")
 
