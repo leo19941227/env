@@ -70,8 +70,8 @@ if !isdirectory($HOME.'/.vimundo')
 set undodir=~/.vimundo
 
 " useful when searching
-set ignorecase
-" set smartcase  " switch to case-sensitive when search query contains an uppercase letter
+" set ignorecase
+set smartcase  " switch to case-sensitive when search query contains an uppercase letter
 set incsearch  " search as characters are entered
 set hlsearch   " highlight matches
 
@@ -101,31 +101,63 @@ set splitright
 set noshowmode
 set noshowcmd
 
-" paste mode is useful for pasting codes from other places (eg. github)
-" cause the autoindent will ruin the pasting content
-set pastetoggle=<F2>
-
 
 " PLUGIN SETTINGS
 let g:indentLine_char = '┊'
 set updatetime=100  " for gitgutter, or else default refresh time is 4 secs
 set laststatus=2  " for ligitline to correctly render the status bar
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+            \ 'colorscheme': 'wombat',
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'gitbranch', 'readonly', 'filename'] ],
+            \   'right': [ [ 'lineinfo' ],
+            \              [ 'percent' ],
+            \              [ 'fileformat', 'fileencoding', 'filetype'] ]
+            \ },
+            \ 'component_function': {
+            \   'gitbranch': 'fugitive#head',
+            \   'fileformat': 'LightlineFileformat',
+            \   'filetype': 'LightlineFiletype',
+            \   'fileencoding': 'LightlineFileencoding',
+            \   'filename': 'LightlineFilename'
+            \ },
+            \ }
+
+function! LightlineFileformat()
+    return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+    return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightlineFileencoding()
+    return winwidth(0) > 70 ? &fileencoding : ''
+endfunction
+
+function! LightlineFilename()
+    let filename = expand('%:r') !=# '' ? expand('%:r') : '[No Name]'
+    let modified = &modified ? ' +' : ''
+    return filename . modified
+endfunction
 
 
 " MAPPINGS FOR NATIVE VIM
 let mapleader = ","
 
 " use ctrl c to cancel any mode (back to normal) is very handy
-map <C-c> <ESC>
+map <C-c> <ESC>:noh<CR>:set nopaste<CR>
+
+" paste mode is useful for pasting codes from other places (eg. github)
+" cause the autoindent will ruin the pasting content
+" One can use this shortcut to enter paste mode
+" to cancel paste mode: <C-c><C-c> (two times of C-c)
+nnoremap <leader>P :set paste<CR>i
 
 " source .vimrc
 nnoremap <leader>R :source ~/.vimrc<CR>
 
-" turn off search highlight for now using simply <ESC> or <C-c>, and turn back when searching again
-nnoremap <ESC> :noh<CR><ESC>
 " clear searching pattern
 nnoremap <leader>C :let @/=""<CR>
 
