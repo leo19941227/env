@@ -70,8 +70,8 @@ if !isdirectory($HOME.'/.vimundo')
 set undodir=~/.vimundo
 
 " useful when searching
-" set ignorecase
-set smartcase  " switch to case-sensitive when search query contains an uppercase letter
+set ignorecase
+" set smartcase  " switch to case-sensitive when search query contains an uppercase letter
 set incsearch  " search as characters are entered
 set hlsearch   " highlight matches
 
@@ -170,8 +170,8 @@ nnoremap <C-k> <C-u>
 nnoremap <expr> j v:count == 0 ? 'gj' : "\<Esc>".v:count.'j'
 nnoremap <expr> k v:count == 0 ? 'gk' : "\<Esc>".v:count.'k'
 " horizontal page moving
-" nnoremap <C-l> 20zl
-" nnoremap <C-h> 20zh
+nnoremap <C-l> 20zl
+nnoremap <C-h> 20zh
 
 " for quick jump (press [number] + [k/j] to relatively jump up/down several lines
 " for debugging (need to see the absolute line number)
@@ -203,7 +203,7 @@ nnoremap <leader>/ :q<CR>
 nnoremap tp :tabprev<CR>
 nnoremap tn :tabnext<CR>
 nnoremap to :tabonly<CR>
-nnoremap <expr> tt (v:count == 0 ? ":tabnew " : ":<C-U>execute v:count 'tabnext'<CR>")
+nnoremap <expr> tt (v:count == 0 ? ":tabnew<CR>" : ":<C-U>execute v:count 'tabnext'<CR>")
 nnoremap <expr> tq (v:count == 0 ? ":tabclose<CR>" : ":<C-U>execute v:count 'tabclose'<CR>")
 
 
