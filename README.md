@@ -1,6 +1,6 @@
 ![](https://i.imgur.com/xUB5R9w.png)
 
-# Linux Environment
+# Coding Environment
 This repository includes four parts of settings:
 - **env.sh** (for bash)
 - **Hack font** (make vim/tmux colorschemes render correctly)
@@ -30,7 +30,7 @@ source ~/env/env.sh
 
 ## Hack font
 - **Root privilege is NOT required**
-- Supports Linux/Max/Windows
+- Supports Linux/Mac/Windows
 
 Since vim/tmux colorschemes frequently use rare symbols to draw a GUI-like terminal-based coding environment. We need to install an additional font package. Follow the installation guide from [Hack Official](https://github.com/source-foundry/Hack). It should help you get a char-rich terminal. (Remember to select **Hack** font for your terminal)
 
