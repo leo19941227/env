@@ -11,7 +11,6 @@ Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'morhetz/gruvbox'
-" Plugin 'vim-airline/vim-airline'
 Plugin 'itchyny/lightline.vim'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'lifepillar/vim-solarized8'
@@ -116,7 +115,7 @@ let g:lightline = {
       \ }
 
 
-" KEY BINDINGS
+" MAPPINGS FOR NATIVE VIM
 let mapleader = ","
 
 " use ctrl c to cancel any mode (back to normal) is very handy
@@ -125,8 +124,10 @@ map <C-c> <ESC>
 " source .vimrc
 nnoremap <leader>R :source ~/.vimrc<CR>
 
-" turn off search highlight for now, and turn back when searching again
-nnoremap <leader>H :nohlsearch<CR>
+" turn off search highlight for now using simply <ESC> or <C-c>, and turn back when searching again
+nnoremap <ESC> :noh<CR><ESC>
+" clear searching pattern
+nnoremap <leader>C :let @/=""<CR>
 
 " toggle between space/tab when inserting <tab>
 nnoremap <leader>E :set expandtab!<CR>
@@ -153,7 +154,7 @@ vnoremap <Space> zf
 vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 
 
-" FOR PLUGIN
+" MAPPINGS FOR PLUGIN
 nnoremap <leader>' :GitGutterToggle<CR>:GitGutterAll<CR>
 nnoremap <leader>m :NERDTreeToggle<cr>:NERDTreeMirror<cr>
 nnoremap <leader>b :b#<CR>
@@ -165,13 +166,17 @@ nnoremap <leader>. :w<CR>
 nnoremap <leader>/ :q<CR>
 
 
-" FOR TAB
+" MAPPINGS FOR TAB
 " create and move between tabs
 nnoremap tp :tabprev<CR>
 nnoremap tn :tabnext<CR>
 nnoremap to :tabonly<CR>
 nnoremap <expr> tt (v:count == 0 ? ":tabnew " : ":<C-U>execute v:count 'tabnext'<CR>")
 nnoremap <expr> tq (v:count == 0 ? ":tabclose<CR>" : ":<C-U>execute v:count 'tabclose'<CR>")
+
+
+" AUTOCMD
+autocmd TabLeave * NERDTreeClose  " all trees should be closed when belong to inactive tab
 
 
 " IGNORE BATTLESHIP PREINSTALLED PACKAGEDS
