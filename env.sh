@@ -22,3 +22,10 @@ alias 'gitlog'='git log --oneline --all --graph'
     alias $venv='source ~/venvs/'$venv'/bin/activate'
 done
 
+# OPEN VIMRC and TMUX.CONF
+alias vimrc='vim ~/env/vimrc'
+alias tmuxconf='vim ~/env/tmux.conf'
+
+# ALIAS DANGEROUS OPERATIONS
+alias init='bash ~/env/dangerous.sh'
+
