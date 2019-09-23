@@ -1,21 +1,21 @@
 #!/bin/bash
 
-EDITOR=vim
+export EDITOR=vim
 
 # VARIABLES
-linux1='r08944041@linux1.csie.ntu.edu.tw'
-linux2='r08944041@linux2.csie.ntu.edu.tw'
-linux3='r08944041@linux3.csie.ntu.edu.tw'
-linux4='r08944041@linux4.csie.ntu.edu.tw'
-linux5='r08944041@linux5.csie.ntu.edu.tw'
-speech='leo1994122701@140.112.21.35'
-lab='leo@140.112.21.12'
+export linux1='r08944041@linux1.csie.ntu.edu.tw'
+export linux2='r08944041@linux2.csie.ntu.edu.tw'
+export linux3='r08944041@linux3.csie.ntu.edu.tw'
+export linux4='r08944041@linux4.csie.ntu.edu.tw'
+export linux5='r08944041@linux5.csie.ntu.edu.tw'
+export speech='leo1994122701@140.112.21.35'
+export lab='leo@140.112.21.12'
 
 # ALIAS
 alias speech='ssh $speech'
 alias lab='ssh $lab'
 alias nlog='bash ~/env/open_newest_log.sh'
-alias 'gitlog'='git log --oneline --all --graph'
+alias gitlog='git log --oneline --all --graph'
 
 # ACTIVATE VENVS OF VIRTUALENV
 [ -d ~/venvs/ ] && for venv in $(ls ~/venvs); do
