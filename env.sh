@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# no bell
+set bell-style none
 export EDITOR=vim
 
 # VARIABLES

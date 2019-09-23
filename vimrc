@@ -44,8 +44,7 @@ set relativenumber
 set number
 set cursorline
 set switchbuf+=usetab,newtab
-set noerrorbells  " disable beep on errors.
-set visualbell    " flash the screen instead of beeping on errors
+set vb t_vb=     " no visual bell & flash
 
 " default will be the pane size and auto wrap when inserting
 set textwidth=0
