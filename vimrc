@@ -45,7 +45,7 @@ set number
 set cursorline
 set switchbuf+=usetab,newtab
 set noerrorbells  " disable beep on errors.
-" set visualbell    " flash the screen instead of beeping on errors
+set visualbell    " flash the screen instead of beeping on errors
 
 " default will be the pane size and auto wrap when inserting
 set textwidth=0
@@ -55,7 +55,7 @@ set wrapmargin=0
 set wildmenu
 set wildignore+=*/node_modules/*,*.so,*.swp,*.zip,*.bak,*.class
                 \*.jpg,*.png,*/data/*,*/__pycache__/*,
-                \*.pyc,*.exe
+                \*.pyc,*.exe,*.ckpt
 
 " purely use git to control files
 set nobackup
