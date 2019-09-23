@@ -16,6 +16,7 @@ alias speech='ssh $speech'
 alias lab='ssh $lab'
 alias nlog='bash ~/env/open_newest_log.sh'
 alias gitlog='git log --oneline --all --graph'
+alias battleship='sshfs -p 3122 $speech:/groups/leo1994122701'
 
 # ACTIVATE VENVS OF VIRTUALENV
 [ -d ~/venvs/ ] && for venv in $(ls ~/venvs); do
