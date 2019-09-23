@@ -90,6 +90,11 @@ augroup python_settings
     autocmd FileType python setlocal et ts=4 sw=4 sts=4
 augroup END
 
+augroup yaml_settings
+    autocmd!
+    autocmd FileType yaml setlocal et ts=2 sw=2 sts=2
+augroup END
+
 set backspace=indent,eol,start
 set autoindent
 set showmatch
@@ -166,6 +171,8 @@ nnoremap <leader>E :set expandtab!<CR>
 " moving around file, up/down/left/right halfpage
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
+nnoremap J 5j
+nnoremap K 5k
 nnoremap <expr> j v:count == 0 ? 'gj' : "\<Esc>".v:count.'j'
 nnoremap <expr> k v:count == 0 ? 'gk' : "\<Esc>".v:count.'k'
 " horizontal page moving
