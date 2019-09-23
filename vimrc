@@ -196,10 +196,12 @@ vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 nnoremap <leader>' :GitGutterToggle<CR>:GitGutterAll<CR>
 nnoremap <leader>m :NERDTreeToggle<cr>:NERDTreeMirror<cr>
 nnoremap <leader>b :b#<CR>
-nnoremap <leader>cb :Glog!<CR>
-nnoremap <leader>ca :Glog! --all<CR>
-nnoremap <leader>cs :Glog! %<CR>
-nnoremap <leader>g :G<CR>
+nnoremap <leader>cb :tabnew<CR>:Glog!<CR><C-w>j<C-w>o
+nnoremap <leader>ca :tabnew<CR>:Glog! --all<CR><C-w>j<C-w>o
+nnoremap <leader>csf :Glog! %<CR><C-w>j
+nnoremap <leader>csd :0Glog!<CR><C-w>j
+nnoremap <leader>g :tabnew<CR>:G<CR><C-w>o
+nnoremap <leader>d :Gdiff<CR>
 nnoremap <leader>. :w<CR>
 nnoremap <leader>/ :q<CR>
 
