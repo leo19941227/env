@@ -200,7 +200,7 @@ nnoremap <leader>cb :tabnew<CR>:Glog!<CR><C-w>j<C-w>o
 nnoremap <leader>ca :tabnew<CR>:Glog! --all<CR><C-w>j<C-w>o
 nnoremap <leader>csf :Glog! %<CR><C-w>j
 nnoremap <leader>csd :0Glog!<CR><C-w>j
-nnoremap <leader>g :tabnew<CR>:G<CR><C-w>o
+nnoremap <leader>g :G<CR>
 nnoremap <leader>d :Gdiff<CR>
 nnoremap <leader>. :w<CR>
 nnoremap <leader>/ :q<CR>
