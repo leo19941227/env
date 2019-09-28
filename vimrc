@@ -16,6 +16,8 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'dracula/vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'google/vim-searchindex'
+Plugin 'haya14busa/vim-asterisk'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -73,6 +75,12 @@ set ignorecase
 " set smartcase  " switch to case-sensitive when search query contains an uppercase letter
 set incsearch  " search as characters are entered
 set hlsearch   " highlight matches
+
+" paste mode is useful for pasting codes from other places (eg. github)
+" cause the autoindent will ruin the pasting content
+" One can use this shortcut to enter paste mode
+" to cancel paste mode: <C-c><C-c> (two times of C-c)
+set pastetoggle=<f2>
 
 " visualize tab char in vim
 set list
@@ -146,18 +154,17 @@ function! LightlineFilename()
     return filename . modified
 endfunction
 
+map *  <Plug>(asterisk-z*)
+map #  <Plug>(asterisk-z#)
+map g* <Plug>(asterisk-gz*)
+map g# <Plug>(asterisk-gz#)
+
 
 " MAPPINGS FOR NATIVE VIM
 let mapleader = ","
 
 " use ctrl c to cancel any mode (back to normal) is very handy
 map <C-c> <ESC>:noh<CR>:set nopaste<CR>
-
-" paste mode is useful for pasting codes from other places (eg. github)
-" cause the autoindent will ruin the pasting content
-" One can use this shortcut to enter paste mode
-" to cancel paste mode: <C-c><C-c> (two times of C-c)
-nnoremap <leader>P :set paste<CR>i
 
 " source .vimrc
 nnoremap <leader>R :source ~/.vimrc<CR>
@@ -189,17 +196,17 @@ nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
 " search for visually selected text
-vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
+" vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 
 
 " MAPPINGS FOR PLUGIN
 nnoremap <leader>' :GitGutterToggle<CR>:GitGutterAll<CR>
 nnoremap <leader>m :NERDTreeToggle<cr>:NERDTreeMirror<cr>
 nnoremap <leader>b :b#<CR>
-nnoremap <leader>cb :tabnew<CR>:Glog!<CR><C-w>j<C-w>o
-nnoremap <leader>ca :tabnew<CR>:Glog! --all<CR><C-w>j<C-w>o
-nnoremap <leader>csf :Glog! %<CR><C-w>j
-nnoremap <leader>csd :0Glog!<CR><C-w>j
+nnoremap <leader>cb :Glog!<CR><C-w>j<C-w>o
+nnoremap <leader>ca :Glog! --all<CR><C-w>j<C-w>o
+nnoremap <leader>csf :0Glog!<CR><C-w>j
+nnoremap <leader>csd :Glog! %<CR><C-w>j
 nnoremap <leader>g :G<CR>
 nnoremap <leader>d :Gdiff<CR>
 nnoremap <leader>. :w<CR>
