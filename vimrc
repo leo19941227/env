@@ -18,6 +18,7 @@ Plugin 'dracula/vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'google/vim-searchindex'
 Plugin 'haya14busa/vim-asterisk'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -158,6 +159,7 @@ map *  <Plug>(asterisk-z*)
 map #  <Plug>(asterisk-z#)
 map g* <Plug>(asterisk-gz*)
 map g# <Plug>(asterisk-gz#)
+let g:asterisk#keeppos = 1
 
 
 " MAPPINGS FOR NATIVE VIM
