@@ -19,6 +19,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'google/vim-searchindex'
 Plugin 'haya14busa/vim-asterisk'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'nanotech/jellybeans.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -31,6 +32,7 @@ set termguicolors
 set background=dark
 " colorscheme dracula
 colorscheme gruvbox
+" colorscheme jellybeans
 
 " gruvbox settings
 let g:gruvbox_invert_selection=0
