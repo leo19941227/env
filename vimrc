@@ -49,6 +49,9 @@ set cursorline
 set switchbuf+=usetab,newtab
 set vb t_vb=     " no visual bell & flash
 
+" bug fix for WSL
+set t_ut=""
+
 " default will be the pane size and auto wrap when inserting
 set textwidth=0
 set wrapmargin=0
