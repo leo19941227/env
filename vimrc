@@ -164,6 +164,13 @@ map g* <Plug>(asterisk-gz*)
 map g# <Plug>(asterisk-gz#)
 let g:asterisk#keeppos = 1
 
+let g:jedi#goto_command = "zd"
+let g:jedi#goto_assignments_command = "zg"
+let g:jedi#documentation_command = "zk"
+let g:jedi#usages_command = "zn"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "zr"
+
 
 " MAPPINGS FOR NATIVE VIM
 let mapleader = ","
