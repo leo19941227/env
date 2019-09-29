@@ -20,6 +20,7 @@ Plugin 'google/vim-searchindex'
 Plugin 'haya14busa/vim-asterisk'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'tomasiser/vim-code-dark'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -31,12 +32,12 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set background=dark
 " colorscheme dracula
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme codedark
 " colorscheme jellybeans
 
 " gruvbox settings
 let g:gruvbox_invert_selection=0
-let g:gitgutter_override_sign_column_highlight=1
 let g:gruvbox_contrast_dark='medium'
 
 " REGULAR VIM SETTINGS
@@ -178,7 +179,12 @@ let g:jedi#documentation_command = "zk"
 let g:jedi#usages_command = "zn"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "zr"
+let g:jedi#use_tabs_not_buffers = 1
 
+let g:gitgutter_override_sign_column_highlight=1
+highlight GitGutterAdd    guifg=#94FF55  ctermfg=2
+highlight GitGutterChange guifg=#FFF700 ctermfg=3
+highlight GitGutterDelete guifg=#ff6859 ctermfg=1
 
 " MAPPINGS FOR NATIVE VIM
 let mapleader = ","
