@@ -182,7 +182,9 @@ let g:jedi#usages_command = "zn"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "zr"
 let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#popup_select_first = 0
+let g:jedi#popup_select_first = 1
+let g:jedi#show_call_signatures = 2
+autocmd FileType python setlocal completeopt-=preview
 
 " GITGUTTER SETTINGS
 " Handcraft the gutter color
@@ -215,6 +217,9 @@ nnoremap <expr> k v:count == 0 ? 'gk' : "\<Esc>".v:count.'k'
 " horizontal page moving
 nnoremap <C-l> 20zl
 nnoremap <C-h> 20zh
+
+nnoremap <leader>f f_l
+nnoremap <leader>g hF_l
 
 " for quick jump (press [number] + [k/j] to relatively jump up/down several lines
 " for debugging (need to see the absolute line number)
