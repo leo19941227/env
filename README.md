@@ -15,7 +15,6 @@ In the following context, I assume that the `env` repository is cloned at `~/`.
 ~$ git clone https://github.com/leo19941227/env
 ```
 
-
 ## BASH
 - The contents in `env.sh` is only desiged for my usecase, one **SHOULD NOT** plug-and-play my `env.sh`
 - The settings in `env.sh` are independent to vim/tmux settings
@@ -26,14 +25,6 @@ Bash settings locate in `env.sh`. Try not to directly add the contents into `~/.
 # ~/.bashrc
 source ~/env/env.sh
 ```
-
-
-## Hack font
-- **Root privilege is NOT required**
-- Supports Linux/Mac/Windows
-
-Since vim/tmux colorschemes frequently use rare symbols to draw a GUI-like terminal-based coding environment. We need to install an additional font package. Follow the installation guide from [Hack Official](https://github.com/source-foundry/Hack). It should help you get a char-rich terminal. (Remember to select **Hack** font for your terminal)
-
 
 ## VIM
 The power of vim comes from the comprehensive support of package community. I use `Vundle` as my **vim package manager**. First install `Vundle`, and then install **vim packages**, which we need to open vim editor first
