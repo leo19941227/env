@@ -16,6 +16,7 @@ export lab='leo@140.112.21.12'
 # ALIAS
 alias speech='ssh $speech'
 alias lab='ssh $lab'
+alias special_ta='ssh roylu@140.112.21.35 -p 2822'
 alias gitlog='git log --oneline --all --graph'
 alias battleship='sshfs -p 3122 $speech:/groups/leo1994122701'
 
@@ -31,6 +32,7 @@ done
 done
 
 # OPEN VIMRC and TMUX.CONF
+alias bashrc='vim ~/env/bashrc'
 alias vimrc='vim ~/env/vimrc'
 alias tmuxconf='vim ~/env/tmux.conf'
 
