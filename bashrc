@@ -119,9 +119,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-# GENERAL PERSONAL SETTINGS
-
 # no bell
 set bell-style none
 export EDITOR=vim
@@ -160,8 +157,4 @@ alias tmuxconf='vim ~/env/tmux.conf'
 
 # ALIAS DANGEROUS OPERATIONS
 alias init='bash ~/env/utils/dangerous.sh'
-
-
-# PLATFORM DEPENDENT SETTINGS
-source ~/env/branch.sh
 
