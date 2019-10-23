@@ -131,6 +131,7 @@ export linux4='r08944041@linux4.csie.ntu.edu.tw'
 export linux5='r08944041@linux5.csie.ntu.edu.tw'
 export speech='leo1994122701@140.112.21.35'
 export lab='leo@140.112.21.12'
+export special_ta_test='ta_test@140.112.21.80'
 
 # ALIAS
 alias speech='ssh $speech'
