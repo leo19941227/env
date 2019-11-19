@@ -1,4 +1,4 @@
-![](https://i.imgur.com/xUB5R9w.png)
+![](https://i.imgur.com/ZT6b2Fp.png)
 
 # Coding Environment
 This repository includes four parts of settings:
