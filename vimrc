@@ -22,6 +22,9 @@ Plugin 'haya14busa/vim-asterisk'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -246,6 +249,7 @@ nnoremap <leader>G :G<CR>
 nnoremap <leader>D :Gdiff<CR>
 nnoremap <leader>. :w<CR>
 nnoremap <leader>/ :q<CR>
+nnoremap <leader>f :FormatCode<CR>
 
 
 " MAPPINGS FOR TAB
