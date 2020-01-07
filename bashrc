@@ -159,3 +159,14 @@ alias tmuxconf='vim ~/env/tmux.conf'
 # ALIAS DANGEROUS OPERATIONS
 alias init='bash ~/env/utils/dangerous.sh'
 
+# PLATFORM DEPENDENT REGION
+if [ $(hostname) == "speechlab" ]; then
+    export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH"
+    export PATH="/usr/local/cuda/bin:$PATH"
+    export PYTHONPATH="/home/leo/d/tools/CMU-MultimodalSDK:$PYTHONPATH"  # MOSEI SDK
+    alias work='cd ~/d'
+    alias battle='cd ~/battle'
+    alias gdown='/home/leo/d/tools/gdown.pl/gdown.pl'
+elif [ $(hostname) == "login.speech" ]; then
+    alias work='cd /groups/leo1994122701'
+fi
