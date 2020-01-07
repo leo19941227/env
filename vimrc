@@ -250,6 +250,7 @@ nnoremap <leader>D :Gdiff<CR>
 nnoremap <leader>. :w<CR>
 nnoremap <leader>/ :q<CR>
 nnoremap <leader>f :FormatCode<CR>
+nnoremap <leader>o :e ~/
 
 
 " MAPPINGS FOR TAB
