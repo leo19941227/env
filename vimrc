@@ -265,6 +265,7 @@ nnoremap <expr> tq (v:count == 0 ? ":tabclose<CR>" : ":<C-U>execute v:count 'tab
 
 " AUTOCMD
 autocmd TabLeave * NERDTreeClose  " all trees should be closed when belong to inactive tab
+autocmd VimEnter * set winfixwidth  " prevent nerdtree to collapse the original window layout
 
 
 " IGNORE BATTLESHIP PREINSTALLED PACKAGEDS
