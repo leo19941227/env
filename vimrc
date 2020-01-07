@@ -239,7 +239,8 @@ vnoremap <Space> zf
 
 " MAPPINGS FOR PLUGIN
 nnoremap <leader>' :GitGutterToggle<CR>:GitGutterAll<CR>
-nnoremap <leader>m :NERDTreeToggle<cr>:NERDTreeMirror<cr>
+nnoremap <leader>m :NERDTreeToggle<cr>
+nnoremap <leader>M :NERDTreeMirror<cr>
 nnoremap <leader>b :b#<CR>
 nnoremap <leader>cb :Glog!<CR><C-w>j<C-w>o
 nnoremap <leader>ca :Glog! --all<CR><C-w>j<C-w>o
