@@ -201,14 +201,10 @@ let mapleader = ","
 " use ctrl c to cancel any mode (back to normal) is very handy
 map <C-c> <ESC>:noh<CR>:set nopaste<CR>
 
-" source .vimrc
 nnoremap <leader>R :source ~/.vimrc<CR>
-
-" clear searching pattern
 nnoremap <leader>C :let @/=""<CR>
-
-" toggle between space/tab when inserting <tab>
-nnoremap <leader>E :set expandtab!<CR>
+nnoremap <leader>T :set expandtab!<CR>
+nnoremap <leader>E :bufdo e<CR>
 
 " moving around file, up/down/left/right halfpage
 nnoremap <C-j> <C-d>
