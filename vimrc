@@ -15,16 +15,16 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'dracula/vim'
-" Plugin 'Yggdroot/indentLine'
 Plugin 'google/vim-searchindex'
 Plugin 'haya14busa/vim-asterisk'
-" Plugin 'davidhalter/jedi-vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
+" Plugin 'Yggdroot/indentLine'
+" Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -235,15 +235,14 @@ vnoremap <Space> zf
 
 " MAPPINGS FOR PLUGIN
 nnoremap <leader>' :GitGutterToggle<CR>:GitGutterAll<CR>
-nnoremap <leader>m :NERDTreeToggle<cr>
-nnoremap <leader>M :NERDTreeMirror<cr>
+nnoremap <leader>m :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 nnoremap <leader>b :b#<CR>
 nnoremap <leader>cb :Glog!<CR><C-w>j<C-w>o
 nnoremap <leader>ca :Glog! --all<CR><C-w>j<C-w>o
 nnoremap <leader>csf :0Glog!<CR><C-w>j
 nnoremap <leader>csd :Glog! %<CR><C-w>j
 nnoremap <leader>G :G<CR>
-nnoremap <leader>D :Gdiff<CR>
+nnoremap <leader>D :Gvdiff<CR>
 nnoremap <leader>. :w<CR>
 nnoremap <leader>/ :q<CR>
 nnoremap <leader>f :FormatCode<CR>

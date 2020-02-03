@@ -167,6 +167,14 @@ if [ $(hostname) == "speechlab" ]; then
     alias work='cd ~/d'
     alias battle='cd ~/battle'
     alias gdown='/home/leo/d/tools/gdown.pl/gdown.pl'
+
+    export KALDI_ROOT=/home/leo/d/tools/kaldi
+    PATH=$PATH:$KALDI_ROOT/tools/openfst
+    PATH=$PATH:$KALDI_ROOT/src/featbin
+    PATH=$PATH:$KALDI_ROOT/src/gmmbin
+    PATH=$PATH:$KALDI_ROOT/src/bin
+    PATH=$PATH:$KALDI_ROOT//src/nnetbin
+    export PATH
 elif [ $(hostname) == "login.speech" ]; then
     alias work='cd /groups/leo1994122701'
 fi
