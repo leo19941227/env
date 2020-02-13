@@ -164,9 +164,11 @@ if [ $(hostname) == "speechlab" ]; then
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH"
     export PATH="/usr/local/cuda/bin:$PATH"
     export PYTHONPATH="/home/leo/d/tools/CMU-MultimodalSDK:$PYTHONPATH"  # MOSEI SDK
+    export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
     alias work='cd ~/d'
     alias battle='cd ~/battle'
     alias gdown='/home/leo/d/tools/gdown.pl/gdown.pl'
+    alias python=python2.7
 
     export KALDI_ROOT=/home/leo/d/tools/kaldi
     PATH=$PATH:$KALDI_ROOT/tools/openfst
@@ -177,4 +179,5 @@ if [ $(hostname) == "speechlab" ]; then
     export PATH
 elif [ $(hostname) == "login.speech" ]; then
     alias work='cd /groups/leo1994122701'
+    export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
 fi
