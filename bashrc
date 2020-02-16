@@ -167,7 +167,6 @@ if [ $(hostname) == "speechlab" ]; then
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
     alias work='cd ~/d'
     alias battle='cd ~/battle'
-    alias gdown='/home/leo/d/tools/gdown.pl/gdown.pl'
     alias python=python2.7
 
     export KALDI_ROOT=/home/leo/d/tools/kaldi
