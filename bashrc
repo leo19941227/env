@@ -165,9 +165,6 @@ if [ $(hostname) == "speechlab" ]; then
     export PATH="/usr/local/cuda/bin:$PATH"
     export PYTHONPATH="/home/leo/d/tools/CMU-MultimodalSDK:$PYTHONPATH"  # MOSEI SDK
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
-    alias work='cd ~/d'
-    alias battle='cd ~/battle'
-    alias python=python2.7
 
     export KALDI_ROOT=/home/leo/d/tools/kaldi
     PATH=$PATH:$KALDI_ROOT/tools/openfst
@@ -175,7 +172,6 @@ if [ $(hostname) == "speechlab" ]; then
     PATH=$PATH:$KALDI_ROOT/src/gmmbin
     PATH=$PATH:$KALDI_ROOT/src/bin
     PATH=$PATH:$KALDI_ROOT//src/nnetbin
-    export PATH
 elif [ $(hostname) == "login.speech" ]; then
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
 fi
