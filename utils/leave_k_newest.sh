@@ -3,6 +3,7 @@
 targetdir=$1
 k=$2
 
+[ -z "$targetdir" ] && targetdir='./'
 cd $targetdir
 
 [ -z "$k" ] && k=1
