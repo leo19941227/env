@@ -177,6 +177,5 @@ if [ $(hostname) == "speechlab" ]; then
     PATH=$PATH:$KALDI_ROOT//src/nnetbin
     export PATH
 elif [ $(hostname) == "login.speech" ]; then
-    alias work='cd /groups/leo1994122701'
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
 fi
