@@ -163,7 +163,7 @@ alias init='bash ~/env/utils/dangerous.sh'
 # PLATFORM DEPENDENT REGION
 if [ $(hostname) == "speechlab" ]; then
     export work='/home/leo/d/'
-    export groups='/home/leo/groups/leo1994122701/'
+    export group='/home/leo/groups/leo1994122701/'
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH"
     export PATH="/usr/local/cuda/bin:$PATH"
     export PYTHONPATH="/home/leo/d/tools/CMU-MultimodalSDK:$PYTHONPATH"  # MOSEI SDK
@@ -177,7 +177,7 @@ if [ $(hostname) == "speechlab" ]; then
     PATH=$PATH:$KALDI_ROOT//src/nnetbin
 elif [ $(hostname) == "login.speech" ]; then
     export work='/home/leo1994122701/'
-    export groups='/groups/leo1994122701/'
+    export group='/groups/leo1994122701/'
     export public='/groups/public/'
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
 fi
