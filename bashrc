@@ -140,6 +140,7 @@ alias special_ta='ssh roylu@140.112.21.35 -p 2822'
 alias gitlog='git log --oneline --all --graph'
 alias gitfetch='git fetch --prune --all'
 alias battleship='sshfs -p 3122 $speech:/groups/leo1994122701'
+alias demo='ssh roylu@140.112.21.35 -p 2822'
 
 # ALIAS SCRIPTS
 for script in $(ls ~/env/utils); do
