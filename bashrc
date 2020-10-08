@@ -199,4 +199,22 @@ elif [ $(hostname) == "login.speech" ]; then
     export group='/groups/leo1994122701/'
     export public='/groups/public/'
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
+elif [ $(hostname) == "sinica" ]; then
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/changlee/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/changlee/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/changlee/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/changlee/miniconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+
+    export PYTHONPATH="/mnt/Data/user_vol_1/member1/user_changlee/S3PRL:$PYTHONPATH"
+    export PATH=/usr/local/cuda-10.0/bin:$PATH
 fi
