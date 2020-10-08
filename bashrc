@@ -94,7 +94,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
+alias bohan="ssh bohan@140.112.21.9 -p 531"
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -136,6 +136,7 @@ export special_ta_test='ta_test@140.112.21.80'
 # ALIAS
 alias speech='ssh $speech'
 alias lab='ssh $lab'
+alias chang="ssh changlee@140.109.21.227"
 alias special_ta='ssh roylu@140.112.21.35 -p 2822'
 alias gitlog='git log --oneline --all --graph'
 alias gitfetch='git fetch --prune --all'
@@ -166,8 +167,9 @@ if [ $(hostname) == "speechlab" ]; then
     export work='/home/leo/d/'
     export group='/home/leo/groups/leo1994122701/'
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH"
-    export PATH="/usr/local/cuda/bin:$PATH"
+    export PATH="/usr/local/cuda/bin:/home/leo/d/speech-enhancement/pesq/c:/home/leo/d/speech-enhancement/pesq/itu_standard/stl/Software/bin:$PATH"
     export PYTHONPATH="/home/leo/d/tools/CMU-MultimodalSDK:$PYTHONPATH"  # MOSEI SDK
+    export PYTHONPATH="/home/leo/d/S3PRL:$PYTHONPATH"
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
 
     export KALDI_ROOT=/home/leo/d/tools/kaldi
@@ -176,6 +178,22 @@ if [ $(hostname) == "speechlab" ]; then
     PATH=$PATH:$KALDI_ROOT/src/gmmbin
     PATH=$PATH:$KALDI_ROOT/src/bin
     PATH=$PATH:$KALDI_ROOT//src/nnetbin
+
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/leo/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/leo/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/leo/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
+        else
+            export PATH="/home/leo/miniconda3/bin:$PATH"  # commented out by conda initialize
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+
 elif [ $(hostname) == "login.speech" ]; then
     export work='/home/leo1994122701/'
     export group='/groups/leo1994122701/'
