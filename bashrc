@@ -196,10 +196,14 @@ elif [ $(hostname) == "sinica" ]; then
     CONDA_ROOT="/home/changlee/miniconda3/"
 
 elif [ $(cat /etc/os-release | head -n 1) == "NAME=\"Ubuntu\"" ]; then
-    CONDA_ROOT="/mnt/efs/fs1/miniconda3_ubuntu18/"
+    WORK="/mnt/efs/fs1/"
+    alias work="cd $WORK"
+    CONDA_ROOT=$WORK"/miniconda3_ubuntu18/"
 
 elif [ $(cat /etc/os-release | head -n 1) == "NAME=\"Amazon Linux\"" ]; then
-    CONDA_ROOT="/mnt/efs/fs1/miniconda3_amazon_linux2/"
+    WORK="/mnt/efs/fs1/"
+    alias work="cd $WORK"
+    CONDA_ROOT=$WORK"/miniconda3_amazon_linux2/"
 fi
 
 
