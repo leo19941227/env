@@ -179,21 +179,7 @@ if [ $(hostname) == "speechlab" ]; then
     PATH=$PATH:$KALDI_ROOT/src/gmmbin
     PATH=$PATH:$KALDI_ROOT/src/bin
     PATH=$PATH:$KALDI_ROOT//src/nnetbin
-
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/home/leo/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/home/leo/miniconda3/etc/profile.d/conda.sh" ]; then
-            . "/home/leo/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
-        else
-            export PATH="/home/leo/miniconda3/bin:$PATH"  # commented out by conda initialize
-        fi
-    fi
-    unset __conda_setup
-    # <<< conda initialize <<<
+    CONDA_ROOT="/home/leo/miniconda3/"
 
 elif [ $(hostname) == "login.speech" ]; then
     export work='/home/leo1994122701/'
@@ -202,53 +188,33 @@ elif [ $(hostname) == "login.speech" ]; then
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
     export PYTHONPATH=/home/leo1994122701/S3PRL:$PYTHONPATH
     export gan_group='/groups/leo1994122701/GAN_Harmonized_with_HMMs'
-
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/home/leo1994122701/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/home/leo1994122701/miniconda3/etc/profile.d/conda.sh" ]; then
-            . "/home/leo1994122701/miniconda3/etc/profile.d/conda.sh"
-        else
-            export PATH="/home/leo1994122701/miniconda3/bin:$PATH"
-        fi
-    fi
-    unset __conda_setup
-    # <<< conda initialize <<<
+    CONDA_ROOT="/home/leo1994122701/miniconda3/"
 
 elif [ $(hostname) == "sinica" ]; then
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/home/changlee/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/home/changlee/miniconda3/etc/profile.d/conda.sh" ]; then
-            . "/home/changlee/miniconda3/etc/profile.d/conda.sh"
-        else
-            export PATH="/home/changlee/miniconda3/bin:$PATH"
-        fi
-    fi
-    unset __conda_setup
-    # <<< conda initialize <<<
-
     export PYTHONPATH="/mnt/Data/user_vol_1/member1/user_changlee/S3PRL:$PYTHONPATH"
     export PATH=/usr/local/cuda-10.0/bin:$PATH
-else
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/mnt/efs/fs1/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/mnt/efs/fs1/miniconda3/etc/profile.d/conda.sh" ]; then
-            . "/mnt/efs/fs1/miniconda3/etc/profile.d/conda.sh"
-        else
-            export PATH="/mnt/efs/fs1/miniconda3/bin:$PATH"
-        fi
-    fi
-    unset __conda_setup
-    # <<< conda initialize <<<
+    CONDA_ROOT="/home/changlee/miniconda3/"
+
+elif [ $(cat /etc/os-release | head -n 1) == "NAME=\"Ubuntu\"" ]; then
+    CONDA_ROOT="/mnt/efs/fs1/miniconda3_ubuntu18/"
+
+elif [ $(cat /etc/os-release | head -n 1) == "NAME=\"Amazon Linux\"" ]; then
+    CONDA_ROOT="/mnt/efs/fs1/miniconda3_amazon_linux2/"
 fi
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$($CONDA_ROOT'/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f $CONDA_ROOT"/etc/profile.d/conda.sh" ]; then
+        . $CONDA_ROOT"/etc/profile.d/conda.sh"
+    else
+        export PATH=$CONDA_ROOT"/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
