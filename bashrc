@@ -155,7 +155,7 @@ done
 done
 
 # OPEN VIMRC and TMUX.CONF
-alias gits='git status'
+alias gs='git status'
 alias bashrc='vim ~/env/bashrc'
 alias vimrc='vim ~/env/vimrc'
 alias tmuxconf='vim ~/env/tmux.conf'
