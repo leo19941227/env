@@ -167,8 +167,8 @@ alias init='bash ~/env/utils/dangerous.sh'
 if [ $(hostname) == "speechlab" ]; then
     export work='/home/leo/d/'
     export group='/home/leo/groups/leo1994122701/'
-    export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH"
-    export PATH="/usr/local/cuda/bin:/home/leo/d/speech-enhancement/pesq/c:/home/leo/d/speech-enhancement/pesq/itu_standard/stl/Software/bin:$PATH"
+    export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+    export PATH="/usr/local/cuda/bin:$PATH"
     export PYTHONPATH="/home/leo/d/tools/CMU-MultimodalSDK:$PYTHONPATH"  # MOSEI SDK
     export PYTHONPATH="/home/leo/d/S3PRL:$PYTHONPATH"
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
