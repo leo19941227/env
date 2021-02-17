@@ -140,6 +140,7 @@ alias chang="ssh changlee@140.109.21.227"
 alias special_ta='ssh roylu@140.112.21.35 -p 2822'
 alias gitlog='git log --oneline --all --graph'
 alias gitfetch='git fetch --prune --all --tags'
+alias gitpullrequest='git fetch origin pull/$id/head:$branch'
 alias battleship='sshfs -p 3122 $speech:/groups/leo1994122701'
 alias demo='ssh roylu@140.112.21.35 -p 2822'
 
@@ -188,6 +189,7 @@ elif [ $(hostname) == "login.speech" ]; then
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
     export PYTHONPATH=/home/leo1994122701/S3PRL:$PYTHONPATH
     export gan_group='/groups/leo1994122701/GAN_Harmonized_with_HMMs'
+    export KALDI_ROOT=/opt/kaldi
     CONDA_ROOT="/home/leo1994122701/miniconda3/"
 
 elif [ $(hostname) == "sinica" ]; then
