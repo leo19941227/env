@@ -183,12 +183,9 @@ if [ $(hostname) == "speechlab" ]; then
     CONDA_ROOT="/home/leo/miniconda3/"
 
 elif [ $(hostname) == "login.speech" ]; then
-    export work='/home/leo1994122701/'
-    export group='/groups/leo1994122701/'
+    export work='/groups/leo1994122701/'
     export public='/groups/public/'
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
-    export PYTHONPATH=/home/leo1994122701/S3PRL:$PYTHONPATH
-    export gan_group='/groups/leo1994122701/GAN_Harmonized_with_HMMs'
     export KALDI_ROOT=/opt/kaldi
     CONDA_ROOT="/home/leo1994122701/miniconda3/"
 
