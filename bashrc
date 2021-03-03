@@ -187,6 +187,7 @@ elif [ $(hostname) == "login.speech" ]; then
     export public='/groups/public/'
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
     export KALDI_ROOT=/opt/kaldi
+    export PYTHONPATH=/groups/leo1994122701/fairseq:$PYTHONPATH
     CONDA_ROOT="/home/leo1994122701/miniconda3/"
 
 elif [ $(hostname) == "sinica" ]; then
