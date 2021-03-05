@@ -172,6 +172,7 @@ if [ $(hostname) == "speechlab" ]; then
     export PATH="/usr/local/cuda/bin:$PATH"
     export PYTHONPATH="/home/leo/d/tools/CMU-MultimodalSDK:$PYTHONPATH"  # MOSEI SDK
     export PYTHONPATH="/home/leo/d/S3PRL:$PYTHONPATH"
+    export PYTHONPATH="/home/leo/d/Benchmarking/fairseq:$PYTHONPATH"
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
 
     export KALDI_ROOT=/home/leo/d/tools/kaldi
