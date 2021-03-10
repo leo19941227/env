@@ -165,7 +165,7 @@ alias tmuxconf='vim ~/env/tmux.conf'
 alias init='bash ~/env/utils/dangerous.sh'
 
 # PLATFORM DEPENDENT REGION
-if [ $(hostname) == "speechlab" ]; then
+if [ "$(hostname)" == "speechlab" ]; then
     export work='/home/leo/d/'
     export group='/home/leo/groups/leo1994122701/'
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
@@ -182,24 +182,24 @@ if [ $(hostname) == "speechlab" ]; then
     PATH=$PATH:$KALDI_ROOT//src/nnetbin
     CONDA_ROOT="/home/leo/miniconda3/"
 
-elif [ $(hostname) == "login.speech" ]; then
+elif [ "$(hostname)" == "login.speech" ]; then
     export work='/groups/leo1994122701/'
     export public='/groups/public/'
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
     export KALDI_ROOT=/opt/kaldi
     CONDA_ROOT="/home/leo1994122701/miniconda3/"
 
-elif [ $(hostname) == "sinica" ]; then
+elif [ "$(hostname)" == "sinica" ]; then
     export PYTHONPATH="/mnt/Data/user_vol_1/member1/user_changlee/S3PRL:$PYTHONPATH"
     export PATH=/usr/local/cuda-10.0/bin:$PATH
     CONDA_ROOT="/home/changlee/miniconda3/"
 
-elif [ $(cat /etc/os-release | head -n 1) == "NAME=\"Ubuntu\"" ]; then
+elif [ "$(cat /etc/os-release | head -n 1)" == "NAME=\"Ubuntu\"" ]; then
     WORK="/mnt/efs/fs1/"
     alias work="cd $WORK"
     CONDA_ROOT=$WORK"/miniconda3_ubuntu18/"
 
-elif [ $(cat /etc/os-release | head -n 1) == "NAME=\"Amazon Linux\"" ]; then
+elif [ "$(cat /etc/os-release | head -n 1)" == "NAME=\"Amazon Linux\"" ]; then
     WORK="/mnt/efs/fs1/"
     alias work="cd $WORK"
     CONDA_ROOT=$WORK"/miniconda3_amazon_linux2/"
