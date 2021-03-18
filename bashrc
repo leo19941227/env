@@ -165,7 +165,7 @@ alias tmuxconf='vim ~/env/tmux.conf'
 alias init='bash ~/env/utils/dangerous.sh'
 
 # PLATFORM DEPENDENT REGION
-if [ "$(hostname)" == "speechlab" ]; then
+if [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "leo" ]; then
     export work='/home/leo/d/'
     export group='/home/leo/groups/leo1994122701/'
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
@@ -181,6 +181,9 @@ if [ "$(hostname)" == "speechlab" ]; then
     PATH=$PATH:$KALDI_ROOT/src/bin
     PATH=$PATH:$KALDI_ROOT//src/nnetbin
     CONDA_ROOT="/home/leo/miniconda3/"
+
+elif [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "decathlon" ]; then
+    CONDA_ROOT="/home/decathlon/miniconda3/"
 
 elif [ "$(hostname)" == "login.speech" ]; then
     export work='/groups/leo1994122701/'
