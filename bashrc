@@ -186,6 +186,8 @@ elif [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "decathlon" ]; then
     CONDA_ROOT="/home/decathlon/miniconda3/"
 
 elif [ "$(hostname)" == "login.speech" ]; then
+    alias hrun='echo [Warning] hrun is aliased to exclude s04; hrun -X s04 '
+
     export work='/groups/leo1994122701/'
     export public='/groups/public/'
     export COMET_API_KEY='P1glQn0xwEkoKivqbIbrQXCz4'
