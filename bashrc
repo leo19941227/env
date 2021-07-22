@@ -168,6 +168,7 @@ alias init='bash ~/env/utils/dangerous.sh'
 if [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "leo" ]; then
     export work='/home/leo/d/'
     export group='/home/leo/groups/leo1994122701/'
+    export twcc_sftp='leo19941227@xdata1.twcc.ai'
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
     export PATH="/usr/local/cuda/bin:$PATH"
     export KENLM_ROOT='/home/leo/d/tools/kenlm'
