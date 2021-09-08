@@ -238,10 +238,8 @@ vnoremap <Space> zf
 nnoremap <leader>' :GitGutterToggle<CR>:GitGutterAll<CR>
 nnoremap <leader>m :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 nnoremap <leader>b :b#<CR>
-nnoremap <leader>cb :Glog!<CR><C-w>j<C-w>o
-nnoremap <leader>ca :Glog! --all<CR><C-w>j<C-w>o
-nnoremap <leader>csf :0Glog!<CR><C-w>j
-nnoremap <leader>csd :Glog! %<CR><C-w>j
+nnoremap <leader>cb :Gclog!<CR><C-w>j<C-w>o
+nnoremap <leader>ca :Gclog! --all<CR><C-w>j<C-w>o
 nnoremap <leader>G :G<CR><C-w>o
 nnoremap <leader>D :Gvdiff<CR>
 nnoremap <leader>. :w<CR>
