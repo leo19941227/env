@@ -7,6 +7,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/gv.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -36,6 +37,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set background=dark
 set foldmethod=syntax
+set diffopt=vertical
 " colorscheme dracula
 colorscheme gruvbox
 " colorscheme codedark
@@ -238,8 +240,10 @@ vnoremap <Space> zf
 nnoremap <leader>' :GitGutterToggle<CR>:GitGutterAll<CR>
 nnoremap <leader>m :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 nnoremap <leader>b :b#<CR>
-nnoremap <leader>cb :Gclog!<CR><C-w>j<C-w>o
-nnoremap <leader>ca :Gclog! --all<CR><C-w>j<C-w>o
+nnoremap <leader>cb :GV<CR>
+nnoremap <leader>ca :GV --all<CR>
+nnoremap <leader>cs :Gclog -g stash<CR><C-w>j<C-w>o
+nnoremap <expr> <leader>s (":<C-U>execute 'GV stash@{' . v:count . '}' <CR>")
 nnoremap <leader>G :G<CR><C-w>o
 nnoremap <leader>D :Gvdiff<CR>
 nnoremap <leader>. :w<CR>
