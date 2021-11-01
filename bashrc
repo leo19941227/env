@@ -131,11 +131,13 @@ export linux4='r08944041@linux4.csie.ntu.edu.tw'
 export linux5='r08944041@linux5.csie.ntu.edu.tw'
 export speech='leo1994122701@140.112.21.35'
 export lab='leo@140.112.21.12'
+export superb='superb@140.112.21.28'
 export special_ta_test='ta_test@140.112.21.80'
 
 # ALIAS
 alias speech='ssh $speech'
 alias lab='ssh $lab'
+alias superb='ssh $superb'
 alias chang="ssh changlee@140.109.21.227"
 alias special_ta='ssh roylu@140.112.21.35 -p 2822'
 alias gitlog='git log --oneline --all --graph'
