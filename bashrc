@@ -205,6 +205,9 @@ elif [ "$(cat /etc/os-release | head -n 1)" == "NAME=\"Ubuntu\"" ]; then
 
 fi
 
+export HF_USERNAME=superb-hidden-set
+export HF_PASSWORD=superbspeech531
+
 
 # if [ ! -z "$CONDA_ROOT" ]; then
 #     # >>> conda initialize >>>
