@@ -190,7 +190,6 @@ elif [ "$(hostname)" == "login.speech" ]; then
     export work='/groups/leo1994122701/'
     export public='/groups/public/'
     export KALDI_ROOT=/opt/kaldi
-    export CONDA_ROOT="/home/leo1994122701/miniconda3/"
 
 elif [ "$(hostname)" == "sinica" ]; then
     export PYTHONPATH="/mnt/Data/user_vol_1/member1/user_changlee/S3PRL:$PYTHONPATH"
