@@ -183,6 +183,8 @@ if [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "leo" ]; then
     PATH=$PATH:$KALDI_ROOT/src/nnetbin
     PATH=$PATH:$KALDI_ROOT/src/ivectorbin
 
+    export CONDA_ROOT="/home/leo/miniconda3/"
+
 elif [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "decathlon" ]; then
     CONDA_ROOT="/home/decathlon/miniconda3/"
 
@@ -203,7 +205,7 @@ elif [ "$(cat /etc/os-release | head -n 1)" == "NAME=\"Ubuntu\"" ]; then
 fi
 
 
-if [ -z "$CONDA_ROOT" ]; then
+if [ ! -z "$CONDA_ROOT" ]; then
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
     __conda_setup="$($CONDA_ROOT'/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -218,6 +220,7 @@ if [ -z "$CONDA_ROOT" ]; then
     fi
     unset __conda_setup
     # <<< conda initialize <<<
+    conda deactivate
 fi
 
 if shopt -q login_shell; then 
