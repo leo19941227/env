@@ -174,6 +174,7 @@ if [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "leo" ]; then
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
     export PATH="/usr/local/cuda/bin:$PATH"
     export KENLM_ROOT='/home/leo/d/tools/kenlm'
+    export CONDA_ROOT="/home/leo/miniconda3/"
 
     export KALDI_ROOT=/home/leo/d/tools/kaldi
     PATH=$PATH:$KALDI_ROOT/tools/openfst
@@ -183,8 +184,6 @@ if [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "leo" ]; then
     PATH=$PATH:$KALDI_ROOT/src/nnetbin
     PATH=$PATH:$KALDI_ROOT/src/ivectorbin
 
-    export CONDA_ROOT="/home/leo/miniconda3/"
-
 elif [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "decathlon" ]; then
     CONDA_ROOT="/home/decathlon/miniconda3/"
 
@@ -192,6 +191,7 @@ elif [ "$(hostname)" == "login.speech" ]; then
     export work='/groups/leo1994122701/'
     export public='/groups/public/'
     export KALDI_ROOT=/opt/kaldi
+    export CONDA_ROOT="/home/leo1994122701/miniconda3/"
 
 elif [ "$(hostname)" == "sinica" ]; then
     export PYTHONPATH="/mnt/Data/user_vol_1/member1/user_changlee/S3PRL:$PYTHONPATH"
