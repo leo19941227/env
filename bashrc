@@ -224,10 +224,8 @@ if [ ! -z "$CONDA_ROOT" ]; then
 fi
 
 if shopt -q login_shell; then 
-  export PYENV_ROOT="$HOME/.pyenv" 
-  export PATH="$PYENV_ROOT/bin:$PATH" 
-  eval "$(pyenv init --path)" 
+    export PYENV_ROOT="$HOME/.pyenv"
+    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
 fi
-
-if command -v pyenv >/dev/null; then eval "$(pyenv init -)"; fi
 
