@@ -133,6 +133,7 @@ export speech='leo1994122701@140.112.21.35'
 export lab='leo@140.112.21.12'
 export superb='superb@140.112.21.28'
 export special_ta_test='ta_test@140.112.21.80'
+export twcc='leo19941227@xdata1.twcc.ai'
 
 # ALIAS
 alias speech='ssh $speech'
