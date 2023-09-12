@@ -2,7 +2,7 @@
 
 if [ $# == 0 ]; then
     echo Please provide directories for the Tensorboard.
-    exit 1
+    return 1
 fi
 
 dir=$(mktemp -d)

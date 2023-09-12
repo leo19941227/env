@@ -150,7 +150,7 @@ alias demo='ssh roylu@140.112.21.35 -p 2822'
 # ALIAS SCRIPTS
 for script in $(ls ~/env/utils); do
     name=$(echo $script | cut -d . -f 1)
-    alias $name='bash ~/env/utils/'$name'.sh'
+    alias $name='source ~/env/utils/'$name'.sh'
 done
 
 # ACTIVATE VENVS OF VIRTUALENV

@@ -2,7 +2,7 @@
 
 if [ $# -lt 2 ]; then
     echo $0 [port] [dir1] [dir2]...
-    exit 1
+    return 1
 fi
 
 port=$1
