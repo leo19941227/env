@@ -16,5 +16,6 @@ do
     mkdir -p $dir/$uuid
     ln -s $abs_path $dir/${uuid}/${base_name}
 done
-tensorboard --logdir $dir --host 0.0.0.0
+tensorboard --logdir $dir --port 0 --host 0.0.0.0
 rm -rf $dir
+
