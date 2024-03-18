@@ -16,6 +16,13 @@ do
     mkdir -p $dir/$uuid
     ln -s $abs_path $dir/${uuid}/${base_name}
 done
-tensorboard --logdir $dir --port 0 --host 0.0.0.0
+
+for port in {6006..7000}; do
+  if [[ "$(lsof -i :$port)" == '' ]]; then
+    tensorboard --logdir=$dir --port=$port --host="0.0.0.0";
+    break;
+  fi;
+done
+
 rm -rf $dir
 

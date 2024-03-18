@@ -183,6 +183,7 @@ if [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "leo" ]; then
     PATH=$PATH:$KALDI_ROOT/src/bin
     PATH=$PATH:$KALDI_ROOT/src/nnetbin
     PATH=$PATH:$KALDI_ROOT/src/ivectorbin
+    PATH=$PATH:/home/leo/d/tools/SCTK/bin
 
 elif [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "decathlon" ]; then
     CONDA_ROOT="/home/decathlon/miniconda3/"
