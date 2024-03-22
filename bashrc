@@ -175,6 +175,7 @@ if [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "leo" ]; then
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
     export PATH="/usr/local/cuda/bin:$PATH"
     export KENLM_ROOT='/home/leo/d/tools/kenlm'
+    export CONDA_ROOT=""
 
     export KALDI_ROOT=/home/leo/d/tools/kaldi
     PATH=$PATH:$KALDI_ROOT/tools/openfst
@@ -192,22 +193,13 @@ elif [ "$(hostname)" == "login.speech" ]; then
     export work='/groups/leo1994122701/'
     export public='/groups/public/'
     export KALDI_ROOT=/opt/kaldi
-    export CONDA_ROOT="/home/leo1994122701/miniconda3/"
-
-elif [ "$(hostname)" == "sinica" ]; then
-    export PYTHONPATH="/mnt/Data/user_vol_1/member1/user_changlee/S3PRL:$PYTHONPATH"
-    export PATH=/usr/local/cuda-10.0/bin:$PATH
-    export CONDA_ROOT="/home/changlee/miniconda3/"
+    export CONDA_ROOT=""
 
 elif [ "$(cat /etc/os-release | head -n 1)" == "NAME=\"Ubuntu\"" ]; then
     export work="/work/leo19941227"
     export CONDA_ROOT="/home/leo19941227/miniconda3"
 
 fi
-
-export HF_USERNAME=superb-hidden-set
-export HF_PASSWORD=superbspeech531
-
 
 if [ ! -z "$CONDA_ROOT" ]; then
     # >>> conda initialize >>>
