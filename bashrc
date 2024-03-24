@@ -175,7 +175,7 @@ if [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "leo" ]; then
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
     export PATH="/usr/local/cuda/bin:$PATH"
     export KENLM_ROOT='/home/leo/d/tools/kenlm'
-    export CONDA_ROOT=""
+    export CONDA_ROOT="/home/leo/miniconda3"
 
     export KALDI_ROOT=/home/leo/d/tools/kaldi
     PATH=$PATH:$KALDI_ROOT/tools/openfst
