@@ -129,14 +129,14 @@ export linux2='r08944041@linux2.csie.ntu.edu.tw'
 export linux3='r08944041@linux3.csie.ntu.edu.tw'
 export linux4='r08944041@linux4.csie.ntu.edu.tw'
 export linux5='r08944041@linux5.csie.ntu.edu.tw'
-export speech='leo1994122701@140.112.21.35'
+export battleship='leo1994122701@140.112.21.35'
 export lab='leo@140.112.21.12'
 export superb='superb@140.112.21.28'
 export special_ta_test='ta_test@140.112.21.80'
 export twcc='leo19941227@xdata1.twcc.ai'
 
 # ALIAS
-alias speech='ssh $speech'
+alias battleship='ssh $speech'
 alias lab='ssh $lab'
 alias superb='ssh $superb'
 alias chang="ssh changlee@140.109.21.227"
@@ -225,3 +225,4 @@ if shopt -q login_shell; then
     command -v pyenv >/dev/null && eval "$(pyenv init -)"
 fi
 
+export PATH=/usr/local/go/bin:$PATH
