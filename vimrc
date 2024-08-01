@@ -11,37 +11,21 @@ Plugin 'junegunn/gv.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'morhetz/gruvbox'
 Plugin 'itchyny/lightline.vim'
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'lifepillar/vim-solarized8'
-Plugin 'dracula/vim'
 Plugin 'google/vim-searchindex'
 Plugin 'haya14busa/vim-asterisk'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'tomasiser/vim-code-dark'
-Plugin 'sheerun/vim-polyglot'
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
-" Plugin 'Yggdroot/indentLine'
-" Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " COLORSCHEME
-" This is only necessary if you use "set termguicolors".
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-set termguicolors
-set background=dark
+colorscheme monokai
+
 set foldmethod=manual
-set diffopt=vertical
-" colorscheme dracula
-colorscheme gruvbox
-" colorscheme codedark
-" colorscheme jellybeans
+set diffopt+=vertical
 
 " gruvbox settings
 let g:gitgutter_override_sign_column_highlight=1
@@ -191,12 +175,6 @@ let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#popup_select_first = 1
 let g:jedi#show_call_signatures = 2
 autocmd FileType python setlocal completeopt-=preview
-
-" GITGUTTER SETTINGS
-" Handcraft the gutter color
-" highlight GitGutterAdd    guifg=#94FF55  ctermfg=2
-" highlight GitGutterChange guifg=#FFF700 ctermfg=3
-" highlight GitGutterDelete guifg=#ff6859 ctermfg=1
 
 " MAPPINGS FOR NATIVE VIM
 let mapleader = ","
