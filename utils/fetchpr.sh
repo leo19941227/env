@@ -2,7 +2,7 @@
 
 if [ $# != 2 ]; then
     echo "Usage: $0 <PR number> <branch name>"
-    return 1;
+    exit 1;
 fi
 
 pr_number=$1

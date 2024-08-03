@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [ $# == 0 ]; then
-    echo Please provide directories for the Tensorboard.
-    return 1
+    echo "$0 <dir1> <dir2> <dir3> ..."
+    exit 1
 fi
 
 dir=$(mktemp -d)
