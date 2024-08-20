@@ -1,0 +1,11 @@
+name: torch
+channels:
+  - pytorch
+  - defaults
+  - nvidia
+dependencies:
+  - python=3.8.5
+  - pytorch-cuda=11.8
+  - pytorch=2.2.2
+  - pip:
+    - tensorboard==2.10.0
