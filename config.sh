@@ -22,4 +22,5 @@ for script in $(ls ~/env/utils); do
 done
 
 alias sync_cluster="nova cluster rsync -c a07e0cc0-d668-4539-adc0-d350649ae400 --delete"
+alias pyenv_init="eval $(pyenv init -)"
 
