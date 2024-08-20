@@ -21,3 +21,5 @@ for script in $(ls ~/env/utils); do
     alias $name='source ~/env/utils/'$name'.sh'
 done
 
+alias sync_cluster="nova cluster rsync -c a07e0cc0-d668-4539-adc0-d350649ae400 --delete"
+
