@@ -1,5 +1,6 @@
 set bell-style none
 export EDITOR=vim
+set -o emacs
 
 alias ls='ls --color=auto'
 alias ll='ls -alF'
