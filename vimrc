@@ -25,7 +25,7 @@ filetype plugin indent on    " required
 " COLORSCHEME
 colorscheme monokai
 
-set foldmethod=manual
+set foldmethod=syntax
 set diffopt+=vertical
 
 " gruvbox settings
@@ -221,7 +221,6 @@ nnoremap <leader>m :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 nnoremap <leader>b :b#<CR>
 nnoremap <leader>cb :GV<CR>
 nnoremap <leader>ca :GV --all<CR>
-nnoremap <leader>cs :Gclog -g stash<CR><C-w>j<C-w>o
 nnoremap <expr> <leader>s (":<C-U>execute 'GV stash@{' . v:count . '}' <CR>")
 nnoremap <leader>G :G<CR><C-w>o
 nnoremap <leader>D :Gvdiff<CR>
