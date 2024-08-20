@@ -1,5 +1,3 @@
-#!/bin/bash
-
 import torch
 
 device_count = torch.cuda.device_count()
