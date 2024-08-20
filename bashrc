@@ -75,30 +75,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias bohan="ssh bohan@140.112.21.9 -p 531"
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -119,54 +95,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# no bell
-set bell-style none
-export EDITOR=vim
-
-# VARIABLES
-export linux1='r08944041@linux1.csie.ntu.edu.tw'
-export linux2='r08944041@linux2.csie.ntu.edu.tw'
-export linux3='r08944041@linux3.csie.ntu.edu.tw'
-export linux4='r08944041@linux4.csie.ntu.edu.tw'
-export linux5='r08944041@linux5.csie.ntu.edu.tw'
-export battleship='leo1994122701@140.112.21.35'
-export lab='leo@140.112.21.12'
-export superb='superb@140.112.21.28'
-export special_ta_test='ta_test@140.112.21.80'
-export twcc='leo19941227@xdata1.twcc.ai'
-
-# ALIAS
-alias battleship='ssh $speech'
-alias lab='ssh $lab'
-alias superb='ssh $superb'
-alias chang="ssh changlee@140.109.21.227"
-alias special_ta='ssh roylu@140.112.21.35 -p 2822'
-alias gitlog='git log --oneline --all --graph'
-alias gitfetch='git fetch --prune --all --tags'
-alias gitpullrequest='git fetch origin pull/$id/head:$branch'
-alias battleship='sshfs -p 3122 $speech:/groups/leo1994122701'
-alias demo='ssh roylu@140.112.21.35 -p 2822'
-
-# ALIAS SCRIPTS
-for script in $(ls ~/env/utils); do
-    name=$(echo $script | cut -d . -f 1)
-    alias $name='source ~/env/utils/'$name'.sh'
-done
-
-# ACTIVATE VENVS OF VIRTUALENV
-[ -d ~/venvs/ ] && for venv in $(ls ~/venvs); do
-    alias $venv='source ~/venvs/'$venv'/bin/activate'
-done
-
-# OPEN VIMRC and TMUX.CONF
-alias gits='git status'
-alias bashrc='vim ~/env/bashrc'
-alias vimrc='vim ~/env/vimrc'
-alias tmuxconf='vim ~/env/tmux.conf'
-
-# ALIAS DANGEROUS OPERATIONS
-alias init='bash ~/env/utils/dangerous.sh'
-
 # PLATFORM DEPENDENT REGION
 if [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "leo" ]; then
     export work='/home/leo/d/'
@@ -185,9 +113,6 @@ if [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "leo" ]; then
     PATH=$PATH:$KALDI_ROOT/src/nnetbin
     PATH=$PATH:$KALDI_ROOT/src/ivectorbin
     PATH=$PATH:/home/leo/d/tools/SCTK/bin
-
-elif [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "decathlon" ]; then
-    CONDA_ROOT="/home/decathlon/miniconda3/"
 
 elif [ "$(hostname)" == "login.speech" ]; then
     export work='/groups/leo1994122701/'
@@ -226,3 +151,6 @@ if shopt -q login_shell; then
 fi
 
 export PATH=/usr/local/go/bin:$PATH
+
+. ~/env/config.sh
+
