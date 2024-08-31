@@ -95,4 +95,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-. $(dirname $0)/config.sh
+script_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+. $script_dir/config.sh
