@@ -27,3 +27,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 alias pyenv_init='eval "$(pyenv init -)"'
 
+export PYTHONPATH=/efs/ec2-user/codebase/APTA2ADataLoading/src:$PYTHONPATH
+export PYTHONPATH=/efs/ec2-user/codebase/APTUtils/src:$PYTHONPATH
+export PYTHONPATH=/efs/ec2-user/codebase/torch-fidelity:$PYTHONPATH
+export PYTHONPATH=/efs/ec2-user/codebase/audioldm_eval:$PYTHONPATH
+export PYTHONPATH=/efs/ec2-user/codebase/AudioLDM-training-finetuning:$PYTHONPATH
