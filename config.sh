@@ -21,12 +21,13 @@ for script in $(ls ~/env/utils); do
     alias $name='source ~/env/utils/'$name'.sh'
 done
 
-alias sync_cluster="nova cluster rsync -c a07e0cc0-d668-4539-adc0-d350649ae400 --delete"
-
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 alias pyenv_init='eval "$(pyenv init -)"'
 
+# Amazon
+alias s3_data_us_east_1="s3://novaboard-shared-apt-agi-3p-data-us-east-1"
+alias s3_data_eu_west_1="s3://novaboard-shared-apt-agi-3p-data-mirror-eu-west-1"
 export PYTHONPATH=/efs/ec2-user/codebase/APTA2ADataLoading/src:$PYTHONPATH
 export PYTHONPATH=/efs/ec2-user/codebase/APTUtils/src:$PYTHONPATH
 export PYTHONPATH=/efs/ec2-user/codebase/torch-fidelity:$PYTHONPATH
