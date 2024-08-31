@@ -22,7 +22,7 @@ for script in $(ls ~/env/utils); do
 done
 
 # platform-dependent settings
-if [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "leo" ]; then
+if hostname | grep -q "speechlab"; then
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
     export KENLM_ROOT="/home/leo/d/tools/kenlm"
     export KALDI_ROOT="/home/leo/d/tools/kaldi"
@@ -35,13 +35,12 @@ if [ "$(hostname)" == "speechlab" ] && [ "$(whoami)" == "leo" ]; then
     export PATH=$PATH:$KALDI_ROOT/src/ivectorbin
     export PATH=$PATH:/home/leo/d/tools/SCTK/bin
 
-elif [ "$(hostname)" == "login.speech" ]; then
+elif hostname | grep -q "login.speech"; then
     export work='/groups/leo1994122701/'
     export public='/groups/public/'
     export KALDI_ROOT=/opt/kaldi
-fi
 
-if cat /etc/os-release | grep -q "Amazon Linux"; then
+elif cat /etc/os-release | grep -q "Amazon Linux"; then
     alias mlpprep='/apollo/bin/env -e HoverboardVolumeSnapshot-MLPDataAccess prepare_datamart_data.py --content-types AUDIO -- '
     alias mlpcat='/apollo/bin/env -e HoverboardVolumeSnapshot-MLPDataAccess get_datamart_data.py --content-type AUDIO --data-type data -- '
     alias curlhost='curl -s https://host-discovery.hoverboard | python -m json.tool'
@@ -78,12 +77,13 @@ if cat /etc/os-release | grep -q "Amazon Linux"; then
     export NUMEXPR_MAX_THREADS=32
     export s3="/apollo/env/HoverboardAshS4/var/s3_mounts"
 
-    export CONDA_ROOT=/home/ec2-user/anaconda3
     export PYTHONPATH=/efs/ec2-user/codebase/APTA2ADataLoading/src:$PYTHONPATH
     export PYTHONPATH=/efs/ec2-user/codebase/APTUtils/src:$PYTHONPATH
     export PYTHONPATH=/efs/ec2-user/codebase/torch-fidelity:$PYTHONPATH
     export PYTHONPATH=/efs/ec2-user/codebase/audioldm_eval:$PYTHONPATH
     export PYTHONPATH=/efs/ec2-user/codebase/AudioLDM-training-finetuning:$PYTHONPATH
+
+    CONDA_ROOT=/home/ec2-user/anaconda3  # must not use export
 fi
 
 # conda env
@@ -102,7 +102,6 @@ if [ ! -z "$CONDA_ROOT" ]; then
     fi
     unset __conda_setup
     # <<< conda initialize <<<
-    conda deactivate
 fi
 
 # pyenv env
