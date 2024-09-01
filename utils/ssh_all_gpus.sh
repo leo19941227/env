@@ -8,7 +8,7 @@ do
         window_name=$(echo $ip | awk -F '.' '{print $3 "." $4}')
         if ! tmux list-windows | grep -q "$window_name"; then
             tmux new-window -n ${window_name}
-            tmux send-keys 'ssh -t -o StrictHostKeyChecking=no '$ip' "source /efs-storage/init_env.sh"' C-m
+            tmux send-keys 'ssh -t -o StrictHostKeyChecking=no '$ip' "source /efs-storage/env/init_hoverboard_gpu.sh"' C-m
         fi
     fi
 done
