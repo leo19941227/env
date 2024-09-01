@@ -25,4 +25,3 @@ for port in {6006..7000}; do
 done
 
 rm -rf $dir
-
