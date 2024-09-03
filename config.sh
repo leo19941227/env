@@ -58,19 +58,10 @@ elif cat /etc/os-release | grep -q "Amazon Linux"; then
     alias mlpprepSegmentedPresenceDetection='/apollo/bin/env -e HoverboardVolumeSnapshot-MLPDataAccess prepare_datamart_data.py --content-types SEGMENTED_PRESENCE_DETECTION -- ' # mlpprep $dmid alias mlpcatSegmentedPresenceDetection='/apollo/bin/env -e HoverboardVolumeSnapshot-MLPDataAccess get_datamart_data.py --content-type SEGMENTED_PRESENCE_DETECTION --data-type data -- ' #     mlpcat $dmid > ff.wav                                                                                                                                                                        alias curlhost='curl -s https://host-discovery.hoverboard | python -m json.tool'
     alias mlps3='/apollo/env/HoverboardDefaultMLPS3Tool/bin/mlps3'
     alias scaleup='/apollo/env/HoverboardScaleCLI/bin/scale'
-    alias getip="/usr/bin/curl -s https://host-discovery.hoverboard  | jq -c '.[] | {privateIpAddress: .privateIpAddress, instanceId: .instanceId, tagName: .tags.Name, instanceType: .instanceType, state: .state.name}'"
+    # alias getip="/usr/bin/curl -s https://host-discovery.hoverboard  | jq -c '.[] | {privateIpAddress: .privateIpAddress, instanceId: .instanceId, tagName: .tags.Name, instanceType: .instanceType, state: .state.name}'"
+    alias getip="/usr/bin/curl -s https://host-discovery.hoverboard  | jq -c '.[] | {ip: .privateIpAddress, type: .instanceType, state: .state.name}'"
     alias sshgpu='ssh -i ~/.ssh/worker_key -o UserKnownHostsFile=~/.ssh/worker_hosts'
     alias termgpu='/apollo/env/HoverboardScaleCLI/bin/hover-scale terminate-worker --ip'
-
-    function watch_workers() {
-        # watch_workers 3 to get workers status every 3 seconds
-        period=${1:-"1"}
-        while :; do
-            result=$(getip)
-            echo $result
-            sleep $period
-        done
-    }
 
     export s3_data_us_east_1="s3://novaboard-shared-apt-agi-3p-data-us-east-1"
     export s3_data_eu_west_1="s3://novaboard-shared-apt-agi-3p-data-mirror-eu-west-1"
