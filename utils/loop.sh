@@ -2,7 +2,6 @@
 
 while true;
 do
-    echo "Current GPU usage:"
-    getip
+    eval "$*"
     sleep 10
 done
