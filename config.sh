@@ -18,7 +18,7 @@ alias tmuxconf='vim ~/env/tmux.conf'
 
 for script in $(ls ~/env/utils); do
     name=$(echo $script | cut -d . -f 1)
-    alias $name='source ~/env/utils/'$name'.sh'
+    alias $name='bash ~/env/utils/'$name'.sh'
 done
 
 # platform-dependent settings
