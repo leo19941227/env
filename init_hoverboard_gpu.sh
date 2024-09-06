@@ -17,9 +17,10 @@ if [ $? -ne 0 ]; then
     tmux new -d -s work
 fi
 
-tmux send-keys -t work 'conda config --prepend envs_dirs /efs-storage/conda/envs' C-m
-tmux send-keys -t work 'conda config --prepend pkgs_dirs /efs-storage/conda/pkgs' C-m
 tmux send-keys -t work 'watch -n 0.5 nvidia-smi' C-m
 tmux new-window -t work -n use_gpu
+tmux send-keys -t work:use_gpu 'conda config --prepend envs_dirs /efs-storage/conda/envs' C-m
+tmux send-keys -t work:use_gpu 'conda config --prepend pkgs_dirs /efs-storage/conda/pkgs' C-m
+tmux send-keys -t work:use_gpu 'conda activate audiomar' C-m
 tmux send-keys -t work:use_gpu 'use_gpu' C-m
 tmux a -t work
