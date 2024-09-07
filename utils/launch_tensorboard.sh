@@ -2,7 +2,7 @@
 
 if [ $# == 0 ]; then
     echo "$0 <dir1> <dir2> <dir3> ..."
-    exit 1
+    return 1
 fi
 
 dir=$(mktemp -d)
