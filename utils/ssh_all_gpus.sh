@@ -1,10 +1,9 @@
 #!/bin/bash
 
-ips=$(/usr/bin/curl -s https://host-discovery.hoverboard | jq -r -c '.[] | .privateIpAddress')
+ips=$(getip | jq 'select(.state == "running")' | jq -r '.ip')
 for ip in $ips;
 do
     echo "Dealing with IP ${ip}..."
-    ping -c 1 $ip > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         window_name=$(echo $ip | awk -F '.' '{print $3 "." $4}')
         if ! tmux list-windows | grep -q "$window_name"; then
