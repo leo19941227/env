@@ -5,4 +5,5 @@ do
     echo Execute the command \"$*\"
     eval "$*"
     sleep 10
+    echo
 done
