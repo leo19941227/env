@@ -1,12 +1,12 @@
 #!/bin/bash
 
 ips=$(getip | jq 'select(.state == "running")' | jq -r '.ip')
-for ip in $ips;
-do
+for ip in $ips; do
     echo "Dealing with IP ${ip}..."
     if [ $? -eq 0 ]; then
         window_name=$(echo $ip | awk -F '.' '{print $3 "." $4}')
-        if ! tmux list-windows | grep -q "$window_name"; then
+        all_window_names=$(for session in $(tmux ls | cut -d: -f 1); do tmux list-windows -t $session -F '#W' | cut -d: -f 1; done)
+        if ! echo "$all_window_names" | grep -q "$window_name"; then
             echo "IP ${ip} does not have a window yet. Launch a window with the name ${window_name}."
             tmux new-window -n ${window_name}
             tmux send-keys 'ssh -t -o StrictHostKeyChecking=no '$ip' "source /efs-storage/env/init_hoverboard_gpu.sh"' C-m
