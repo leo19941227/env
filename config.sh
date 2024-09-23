@@ -57,6 +57,7 @@ elif cat /etc/os-release | grep -q "Amazon Linux"; then
     alias mlpprepSegmentedPresenceDetection='/apollo/bin/env -e HoverboardVolumeSnapshot-MLPDataAccess prepare_datamart_data.py --content-types SEGMENTED_PRESENCE_DETECTION -- ' # mlpprep $dmid alias mlpcatSegmentedPresenceDetection='/apollo/bin/env -e HoverboardVolumeSnapshot-MLPDataAccess get_datamart_data.py --content-type SEGMENTED_PRESENCE_DETECTION --data-type data -- ' #     mlpcat $dmid > ff.wav                                                                                                                                                                        alias curlhost='curl -s https://host-discovery.hoverboard | python -m json.tool'
     alias mlps3='/apollo/env/HoverboardDefaultMLPS3Tool/bin/mlps3'
     alias scaleup='/apollo/env/HoverboardScaleCLI/bin/scale'
+    alias terminate-worker='/apollo/env/HoverboardScaleCLI/bin/hover-scale terminate-worker'
     # alias getip="/usr/bin/curl -s https://host-discovery.hoverboard  | jq -c '.[] | {privateIpAddress: .privateIpAddress, instanceId: .instanceId, tagName: .tags.Name, instanceType: .instanceType, state: .state.name}'"
     alias getip="/usr/bin/curl -s https://host-discovery.hoverboard  | jq -c '.[] | {ip: .privateIpAddress, type: .instanceType, state: .state.name}'"
     alias sshgpu='ssh -i ~/.ssh/worker_key -o UserKnownHostsFile=~/.ssh/worker_hosts'
