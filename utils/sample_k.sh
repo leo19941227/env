@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# != "2" ]; then
+if [ $# != "3" ]; then
     echo "$0 <source_folder> <k> <target_folder>"
     return 1
 fi
