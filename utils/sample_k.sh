@@ -12,5 +12,5 @@ target_folder=$3
 mkdir -p $target_folder
 for file in $(ls $source_folder | shuf | head -n $k);
 do
-    cp $source_folder/$file $target_folder
+    ln -s $(realpath $source_folder/$file) $target_folder/$file
 done
