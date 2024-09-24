@@ -2,7 +2,7 @@
 
 if [ $# != "2" ]; then
     echo "$0 <source_folder> <k> <target_folder>"
-    exit 1
+    return 1
 fi
 
 source_folder=$1
