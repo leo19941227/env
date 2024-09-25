@@ -1,13 +1,13 @@
 #!/bin/bash
 
 if [ $# != "3" ]; then
-    echo "$0 <source_folder> <k> <target_folder>"
+    echo "$0 <source_folder> <target_folder> <k>"
     return 1
 fi
 
 source_folder=$1
-k=$2
-target_folder=$3
+target_folder=$2
+k=$3
 
 mkdir -p $target_folder
 for file in $(ls $source_folder | shuf | head -n $k);
