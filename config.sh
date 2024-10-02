@@ -67,6 +67,7 @@ elif cat /etc/os-release | grep -q "Amazon Linux"; then
     export s3_data_eu_west_1="s3://novaboard-shared-apt-agi-3p-data-mirror-eu-west-1"
     export NUMEXPR_MAX_THREADS=32
     export s3="/apollo/env/HoverboardAshS4/var/s3_mounts"
+    export TORCH_HOME=/efs/ec2-user/cache/torch
 
     export PYTHONPATH=/efs/ec2-user/codebase/APTA2ADataLoading/src:$PYTHONPATH
     export PYTHONPATH=/efs/ec2-user/codebase/APTUtils/src:$PYTHONPATH
