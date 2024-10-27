@@ -62,6 +62,7 @@ elif cat /etc/os-release | grep -q "Amazon Linux"; then
     alias getip="/usr/bin/curl -s https://host-discovery.hoverboard  | jq -c '.[] | {ip: .privateIpAddress, type: .instanceType, state: .state.name}'"
     alias sshgpu='ssh -i ~/.ssh/worker_key -o UserKnownHostsFile=~/.ssh/worker_hosts'
     alias termgpu='/apollo/env/HoverboardScaleCLI/bin/hover-scale terminate-worker --ip'
+    alias term='terminate-worker --ip $(ip a | grep 10.0. | cut -d/ -f1 | cut -d " " -f6)'
 
     export s3_data_us_east_1="s3://novaboard-shared-apt-agi-3p-data-us-east-1"
     export s3_data_eu_west_1="s3://novaboard-shared-apt-agi-3p-data-mirror-eu-west-1"
