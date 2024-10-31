@@ -77,6 +77,7 @@ elif cat /etc/os-release | grep -q "Amazon Linux"; then
     export PYTHONPATH=/efs/ec2-user/codebase/AudioLDM-training-finetuning:$PYTHONPATH
     export PYTHONPATH=/efs/ec2-user/codebase/mar:$PYTHONPATH
     export PYTHONPATH=/efs/ec2-user/codebase/:$PYTHONPATH
+    export PYTHONPATH=/efs/ec2-user/codebase/ArLDMT2A/src/:$PYTHONPATH
 
     CONDA_ROOT=/home/ec2-user/anaconda3  # must not use export
 fi
