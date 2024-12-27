@@ -34,10 +34,9 @@ if hostname | grep -q "speechlab"; then
     export PATH=$PATH:$KALDI_ROOT/src/ivectorbin
     export PATH=$PATH:/home/leo/d/tools/SCTK/bin
 
-elif hostname | grep -q "login.speech"; then
-    export work='/groups/leo1994122701/'
-    export public='/groups/public/'
+elif hostname | grep -q ".speech"; then
     export KALDI_ROOT=/opt/kaldi
+    CONDA_ROOT=/home/leo1994122701/miniconda3  # must not use export
 
 elif cat /etc/os-release | grep -q "Amazon Linux"; then
     alias mlpprep='/apollo/bin/env -e HoverboardVolumeSnapshot-MLPDataAccess prepare_datamart_data.py --content-types AUDIO -- '
